@@ -1,5 +1,81 @@
-import Image from "next/image";
+"use client"
+import React, { useState, useEffect } from 'react'
+import { useSections } from '@/contexts'
+import Menu from '@/Common/Menu'
 
+const useActiveSection = (sections:string[], titles:string[], defaultTitle:string) => {
+  const [activeSection, setActiveSection] = useState('');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id)
+					const index = sections.indexOf(entry.target.id)
+					if (index >= 0)
+					{
+						document.title = `${titles[index]} | ${defaultTitle}`
+					}
+					else
+					{
+						document.title = `${defaultTitle}`
+					}
+        }
+      });
+    }, { threshold: 0.5 });
+
+    sections.forEach(sectionId => {
+      const element = document.getElementById(sectionId);
+      if (element) observer.observe(element);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [sections, titles, defaultTitle]);
+	
+  return activeSection;
+};
+
+const Home: React.FC = () => {
+	const { sections, titles, defaultTitle, components  } = useSections();
+	const activeSection = useActiveSection(sections, titles, defaultTitle);
+	const [logoOpacity, setLogoOpacity] = useState(0);
+
+	useEffect(() => {
+		const headerHeight = document.getElementById('Header')?.offsetHeight || 0;
+		const handleScroll = () => {
+			const scrollPosition = window.scrollY;
+			const opacity = Math.min(scrollPosition / headerHeight, 1);
+			setLogoOpacity(isNaN(opacity) ? 0 : opacity);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
+	return (
+		<>
+			<Menu logoOpacity={logoOpacity} activeSection={activeSection} />
+      {sections.map((sectionId, index) => {
+        const SectionComponent = components[sectionId];
+        return SectionComponent ? (
+          <SectionComponent key={sectionId} id={sectionId} />
+        ) : null;
+      })}
+		</>
+	)
+}
+
+export default Home
+
+
+
+
+
+
+
+/*
 export default function Home() {
   return (
     <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
@@ -101,3 +177,4 @@ export default function Home() {
     </div>
   );
 }
+*/
