@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "PORT=3302 next start",
+    "lint": "next lint",
+    "refresh": "git pull && pm2 stop londonlink && pm2 delete londonlink && npm install && npm run build &&  pm2 start npm --name \"londonlink\" -- start"
   },
   "dependencies": {
     "@types/styled-components": "^5.1.34",
