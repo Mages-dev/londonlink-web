@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
+  --primary: #2563eb;
+  --secondary: #1e40af;
   --background: #ffffff;
-  --foreground: #171717;
+  --accent: #f59e0b;
+  --text: #1f2937;
+  --text-menubar: #444444;
+  --text-menubar-button: #dddddd;
+  --logo-link-color: #191919;
+  --bg-menubar: #dddddd;
+  --bg-menubar-button: #969696;
+  --bg-menucontainer: #818181;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="dark"] {
+  --primary: #3b82f6;
+  --secondary: #1e40af;
+  --background: #1f2937;
+  --accent: #f59e0b;
+  --text: #f9fafb;
+  --text-menubar: #ffffff;
+  --text-menubar-button: #3f3f3f;
+  --logo-link-color: #f9fafb;
+  --bg-menubar: #1f2937;
+  --bg-menubar-button: #dddddd;
+  --bg-menucontainer: #3f3f3f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+}
+
+/* Estilo da barra de rolagem */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f1f1f1;
 }

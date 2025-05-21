@@ -1,0 +1,71 @@
+/* components/_common/Navigation/Navigation.module.css */
+.menucontainer {
+  position: fixed;
+  
+  top: 1rem;
+  left: 50%;
+  width: calc(100% - 2rem);
+  height: 100px;
+  
+  transform: translateX(-50%);
+  max-width: 1400px;
+  
+  color: var(--text-menubar);
+  background: color-mix(in srgb, var(--bg-menucontainer) 90%, transparent);
+  border-radius: 10px;
+
+  transition: all 0.3s ease;  
+  padding: 0 20px; /* Reduzi o padding lateral */
+  gap: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.menucontainer.scrolled {
+  top: 0.5rem;
+}
+
+.navWrapper {
+  display: flex;
+  align-items: flex-start; /* Alinha ao topo */
+  gap: 1rem;
+  position: relative;
+  width: calc(100% - 270px);
+  height: 70%;
+}
+
+.menubar {
+  color: var(--text-menubar);
+  width: 100%;
+  padding: 0.5rem 1.5rem;
+  background: color-mix(in srgb, var(--bg-menubar) 80%, transparent);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Isso ajuda a separar os elementos */
+  height: 100%;
+}
+
+.themeSwitcher {
+  margin-top: 0.5rem; /* Alinha visualmente com a nav */
+}
+
+.button {
+  min-width: 145px;
+  min-height: 30px;
+  max-height: 2em;
+  margin-left: 2em;
+  color: var(--text-menubar-button);
+  background-color: var(--bg-menubar-button);
+}
+
+@media (max-width: 768px) {
+  .menubar {
+    width: calc(100% - 1rem);
+    top: 0.5rem;
+  }
+}
