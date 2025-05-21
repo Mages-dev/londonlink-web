@@ -54,9 +54,7 @@ export default function RootLayout({
         <ThemeProvider>
           <ThemeApplier />
           <header style={{ padding: "1rem", display: "flex", justifyContent: "flex-end" }}>
-            <Navigation logoOpacity={1} activeSection="home">
-              {children}
-            </Navigation>
+            <Navigation activeSection="home" />
           </header>
           {children}
         </ThemeProvider>

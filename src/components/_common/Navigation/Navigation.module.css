@@ -11,7 +11,12 @@
   max-width: 1400px;
   
   color: var(--text-menubar);
-  background: color-mix(in srgb, var(--bg-menucontainer) 90%, transparent);
+  background: linear-gradient(
+    300deg,
+    color-mix(in srgb, var(--bg-menucontainer-color-a) 50%, transparent) 10%,
+    color-mix(in srgb, var(--bg-menucontainer-color-b) 50%, transparent) 100%
+  );
+
   border-radius: 10px;
 
   transition: all 0.3s ease;  
@@ -41,7 +46,8 @@
   color: var(--text-menubar);
   width: 100%;
   padding: 0.5rem 1.5rem;
-  background: color-mix(in srgb, var(--bg-menubar) 80%, transparent);
+  background: color-mix(in srgb, var(--bg-menubar) 70%, transparent) 25%;
+
   backdrop-filter: blur(10px);
   border-radius: 20px;
   display: flex;
@@ -55,12 +61,79 @@
 }
 
 .button {
-  min-width: 145px;
-  min-height: 30px;
+  min-width: 150px;
+  min-height: 40px;
   max-height: 2em;
-  margin-left: 2em;
-  color: var(--text-menubar-button);
-  background-color: var(--bg-menubar-button);
+  border: 2px solid var(--bg-menubar-button);
+  color: var(--bg-menubar-button);
+  border-radius: 9999px;
+}
+
+.button:hover {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* Estilos gerais */
+.navItem, .sidebarItem {
+  position: relative;
+  padding: 0.5rem 0.5rem;
+  color: var(--text-menubar);
+  transition: all 0.3s ease;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Estado hover */
+.navItem:hover, .sidebarItem:hover {
+  color: var(--accent);
+}
+
+/* Item ativo */
+.active {
+  color: var(--accent) !important;
+  font-weight: bold;
+}
+
+/* Menu mobile */
+.sidebarContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: var(--bg-menucontainer);
+  z-index: 1000;
+  transition: all 0.3s ease;
+  transform: translateY(-100%);
+  opacity: 0;
+  padding-top: 120px;
+}
+
+.sidebarContainer.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.sidebarItem {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 1rem;
 }
 
 @media (max-width: 768px) {

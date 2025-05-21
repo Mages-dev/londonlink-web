@@ -1,45 +1,53 @@
-//import Link from "next/link";
-import { JSX } from "react";
+import React from "react";
 import { SideBarProps } from "@/interfaces";
+import styles from "../Navigation.module.css";
 
 const Sidebar: React.FC<SideBarProps> = ({
   sections,
   titles,
   isOpen,
   toggle,
-  activeSection,
+  //activeSection,
   isActive,
   scrollToSection
-}) : JSX.Element => {
+}) => {
   return (
-    <>
-      <div
-        className="sidebar-container fixed w-full h-full overflow-hidden justify-center bg-white grid pt-[120px] left-0 z-10"
-        style={{
-          opacity: `${isOpen ? "1" : "0"}`,
-          top: ` ${isOpen ? "0" : "-100%"}`,
-        }}
-      >
-        <button className="absolute right-0 p-5" onClick={toggle}>
-        {/* Close icon */}
-          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24"> 
-            <path
-              fill="currentColor"
-              d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
-            />
-          </svg>
-        </button>
-      {sections.map((section, index) => (
-        <div
-        key={section}
-        className={isActive(activeSection, section)}
-        onClick={() => scrollToSection(section)}
+    <div
+      className={`${styles.sidebarContainer} ${
+        isOpen ? styles.open : styles.closed
+      }`}
+    >
+      <button className={styles.closeButton} onClick={toggle}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="48"
+          height="48"
+          viewBox="0 0 24 24"
         >
-          {titles[index]}
-        </div>
-      ))}
+          <path
+            fill="currentColor"
+            d="M19 6.41L17.59 5L12 10.59L6.41 5L5 6.41L10.59 12L5 17.59L6.41 19L12 13.41L17.59 19L19 17.59L13.41 12L19 6.41Z"
+          />
+        </svg>
+      </button>
+
+      <div className={styles.sidebarContent}>
+        {sections.map((section, index) => (
+          <button
+            key={section}
+            className={`${styles.sidebarItem} ${
+              isActive(section) ? styles.active : ''
+            }`}
+            onClick={() => {
+              scrollToSection(section);
+              toggle();
+            }}
+          >
+            {titles[index]}
+          </button>
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

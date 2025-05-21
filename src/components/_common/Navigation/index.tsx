@@ -9,67 +9,100 @@ import Sidebar from "./Sidebar"
 import styles from "./Navigation.module.css"
 import Button from "./Button";
 
-const scrollToSection = (sectionId:string) => {
-	document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' });
-};
 
-const isActive = (activeSection:string, sectionName:string):string => {
-  return activeSection === sectionName ? 'active' : ''
-}
 
 const Navigation: React.FC<MenuProps> = ({
-//  logoOpacity,
-  activeSection,
+  //logoOpacity = 1,
+  activeSection: initialActiveSection = 'home'
 }) => {
-  const {
-    sections,
-    titles,
-    //  defaultTitle
-  } = useSections();
-	//const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState(initialActiveSection);
+  const { sections, titles } = useSections();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-	//const style = { opacity: 1, transition: 'opacity 0.5s ease' };
-  
-  const toggle = () => setIsOpen(!isOpen);
-	
-/*
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-	};
-	
-  const handleMenuItemClick = (section: string) => {
-    scrollToSection(section);
-    setIsMobileMenuOpen(false);
-	};
-*/
+
+  // Função de scroll melhorada
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      const headerOffset = 100; // Ajuste conforme a altura do header
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
+      
+      setActiveSection(sectionId);
+      setIsOpen(false); // Fecha o menu mobile após clique
+    }
+  };
+
+  // Função de verificação de seção ativa
+  const isActive = (sectionName: string): boolean => {
+    return activeSection === sectionName;
+  };
+
+  // Efeito para detectar seção ativa
   useEffect(() => {
     const handleScroll = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
+      let currentSection = activeSection;
+
+      sections.forEach(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const { offsetTop, offsetHeight } = element;
+          if (
+            scrollPosition > offsetTop &&
+            scrollPosition < offsetTop + offsetHeight
+          ) {
+            currentSection = section;
+          }
+        }
+      });
+
+      if (currentSection !== activeSection) {
+        setActiveSection(currentSection);
+      }
+
       setScrolled(window.scrollY > 10);
     };
-    
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
 
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [activeSection, sections]);
 
   return (
-    <>
-      <div className={`${styles.menucontainer} ${scrolled ? styles.scrolled : ""}`}>
-        <Logo />
-        <div className={styles.navWrapper}>
-          <nav className={`${styles.menubar} ${scrolled ? styles.scrolled : ""}`}>
-            <Sidebar sections={sections} titles={titles} toggle={toggle} activeSection={activeSection} isActive={isActive} scrollToSection={scrollToSection} isOpen={isOpen} />
-            <Navbar sections={sections} titles={titles} toggle={toggle} activeSection={activeSection} isActive={isActive} scrollToSection={scrollToSection} />
-            <div className="hidden md:block">
-              <Button />
-            </div>
-          </nav>
-          <ThemeSwitcher />
-        </div>
+    <div className={`${styles.menucontainer} ${scrolled ? styles.scrolled : ""}`}>
+      <Logo />
+      <div className={styles.navWrapper}>
+        <nav className={`${styles.menubar} ${scrolled ? styles.scrolled : ""}`}>
+          <Sidebar
+            sections={sections}
+            titles={titles}
+            isOpen={isOpen}
+            toggle={() => setIsOpen(!isOpen)}
+            activeSection={activeSection}
+            isActive={isActive}
+            scrollToSection={scrollToSection}
+          />
+          <Navbar
+            sections={sections}
+            titles={titles}
+            toggle={() => setIsOpen(!isOpen)}
+            activeSection={activeSection}
+            isActive={isActive}
+            scrollToSection={scrollToSection}
+          />
+          <div className="hidden md:block">
+            <Button />
+          </div>
+        </nav>
+        <ThemeSwitcher />
       </div>
-    </>
-	);
+    </div>
+  );
 };
 
 export default Navigation;

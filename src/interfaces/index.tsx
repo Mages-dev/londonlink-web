@@ -13,9 +13,9 @@ export interface Props {
 }
 
 export interface MenuProps {
-	logoOpacity: number;
+	logoOpacity?: number;
 	activeSection: string;
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export interface NavBarProps {
@@ -23,7 +23,7 @@ export interface NavBarProps {
 	titles: string[];
 	toggle: () => void;
 	activeSection: string;
-	isActive: (activeSection: string, sectionName: string) => string;
+	isActive: (sectionName: string) => boolean;
 	scrollToSection: (sectionId: string) => void;
 }
 
@@ -33,6 +33,6 @@ export interface SideBarProps {
 	isOpen: boolean;
 	toggle: () => void;
 	activeSection: string;
-	isActive: (activeSection: string, sectionName: string) => string;
+	isActive: (sectionName: string) => boolean;
 	scrollToSection: (sectionId: string) => void;
 }
