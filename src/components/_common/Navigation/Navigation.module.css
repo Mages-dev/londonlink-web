@@ -102,14 +102,16 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
+  width: 100vw;
   height: 100vh;
-  background: var(--bg-menucontainer);
+  background: green;/*var(--bg-menucontainer);*/
   z-index: 1000;
   transition: all 0.3s ease;
-  transform: translateY(-100%);
+  transform: translateY(-100vw);
   opacity: 0;
   padding-top: 120px;
+  margin-left: -78vw;
+  margin-top: -5vh;
 }
 
 .sidebarContainer.open {
@@ -140,5 +142,10 @@
   .menubar {
     width: calc(100% - 1rem);
     top: 0.5rem;
+  }
+
+  .navWrapper {
+    display: inherit;
+    visibility: inherit;
   }
 }

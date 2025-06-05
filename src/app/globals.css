@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 @import "tailwindcss";
 
 :root {
@@ -10,10 +11,21 @@
   --text-menubar: #444444;
   --text-menubar-button: #dddddd;
   --logo-link-color: #191919;
+  --shadow-color: #818181;
   --bg-menubar: #dddddd;
   --bg-menubar-button: #969696;
   --bg-menucontainer-color-a: #818181;
   --bg-menucontainer-color-b: #000000;
+  --faded-circle-bg: #818181;
+  --gradient-circle-bg: #818181;
+  --home-card-title-font-color: #ffffff;
+  --home-card-font-color: #ff0000;
+  --home-card-bg-color: #949494;
+  --home-card-borders-color: #ff0000;
+  --home-card-icon-bg-color: #dddddd;
+  --home-card-icon-color: #ff0000;
+  --home-imagecard-label-color: #1f2937;
+  --home-imagecard-label-bg-color: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -26,10 +38,21 @@
   --text-menubar: #dddddd;
   --text-menubar-button: #3f3f3f;
   --logo-link-color: #f9fafb;
+  --shadow-color: #cccccc;
   --bg-menubar: #222222;
   --bg-menubar-button: #dddddd;
   --bg-menucontainer-color-a: #4d4d4d;
   --bg-menucontainer-color-b: #0d0d33;
+  --faded-circle-bg: #cfe5ff;
+  --gradient-circle-bg: #cfe5ff;
+  --home-card-title-font-color: #dddddd;
+  --home-card-font-color: #f59e0b;
+  --home-card-bg-color: #1f2937;
+  --home-card-borders-color: #ffffff;
+  --home-card-icon-bg-color: #818181;
+  --home-card-icon-color: #ffffff;
+  --home-imagecard-label-color: #1f2937;
+  --home-imagecard-label-bg-color: #ffffff;
 }
 
 html {
@@ -85,4 +108,5 @@ body::before {
 * {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
+  font-family: "Open Sans", sans-serif;
 }

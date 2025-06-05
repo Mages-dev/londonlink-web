@@ -1,0 +1,92 @@
+.component {
+  height: 2000px;
+}
+
+.textBlock {
+  margin-top: 200px;
+  margin-left: 100px;
+  line-height: 5cap;
+  z-index: 2000;
+}
+
+.paragrafo {
+  margin-top: 25px;
+  line-height: 25px;
+}
+
+.h1 {
+  font-size: 4cap;
+}
+
+.shadow {
+  text-shadow: 3px 3px 4px var(--shadow-color);
+}
+
+.bold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+}
+
+.vantagensContainer {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.objetivosContainer {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.cardsContainer::-webkit-scrollbar {
+  display: none;
+}
+
+.titlesContainer {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+}
+
+.mainTitle {
+  flex: 1;
+  max-width: 50%;
+  font-size: 2cap;
+  line-height: 1.5cap;
+  color: var(--home-card-font-color);
+}
+
+.secondaryTitle {
+  flex: 1;
+  max-width: 50%;
+  font-size: 1.2cap;
+  color: var(--home-card-title-font-color);
+}
+
+.imageCardsContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 1rem 0;
+  left: 200px;
+  width: calc(100% - 200px);
+}
+
+.imageCardsContainer::-webkit-scrollbar {
+  display: none;
+}

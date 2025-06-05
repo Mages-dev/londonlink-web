@@ -23,24 +23,21 @@ const SectionObserver = ({ section }: { section: string }) => {
     '200px'
   );
   const Component = componentMap[section];
-  const [shouldLoad, setShouldLoad] = useState(false);
+  const [hasBeenVisible, setHasBeenVisible] = useState(false);
 
   useEffect(() => {
-  if (isVisible && !shouldLoad) {
-    const timer = setTimeout(() => setShouldLoad(true), 300);
-    return () => clearTimeout(timer);
-  }
-}, [isVisible, shouldLoad]);
+    if (isVisible && !hasBeenVisible) {
+      setHasBeenVisible(true);
+    }
+  }, [isVisible, hasBeenVisible]);
 
   return (
     <section id={section} className="min-h-screen py-12">
       <div ref={ref} className="h-4" /> {/* Marcador invisível para observação */}
       
-      {isVisible && (
+      {(isVisible || hasBeenVisible) && (
         <Suspense fallback={<div className="text-center">Carregando {section}...</div>}>
-          {shouldLoad && (
-            <Component id={section} />
-          )}
+          <Component id={section} />
         </Suspense>
       )}
     </section>

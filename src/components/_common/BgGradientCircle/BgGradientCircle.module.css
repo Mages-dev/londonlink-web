@@ -1,0 +1,26 @@
+.gradientContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 2rem);
+  height: 99dvh;
+}
+
+.gradient {
+  position: fixed;
+  width: 600px;
+  height: 500px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: circle(calc(var(--radius) * 1px) at 50% calc(50% + 70px));
+}
+
+@media (max-width: 768px) {
+
+}

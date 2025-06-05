@@ -1,0 +1,40 @@
+.fadedContainer
+{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: calc(100% - 2rem);
+  height: 99dvh;
+
+  transform: translateX(-50%);
+  max-width: 1400px;
+  z-index: 0;
+}
+
+.faded {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  top: calc(var(--y) + 0 * 1px);
+  left: calc(var(--x) + 0 * 1px);
+  width: calc(var(--radius) * 2 * 1px);
+  height: calc(var(--radius) * 2 * 1px);
+
+  background:
+    radial-gradient(
+      circle at 50% 50%,
+      color-mix(in srgb, var(--faded-circle-bg) 90%, transparent) 0, 
+      color-mix(in srgb, var(--faded-circle-bg) 40%, transparent) calc(var(--radius) * 0.5 * 1px), 
+      color-mix(in srgb, var(--faded-circle-bg) 15%, transparent) calc(var(--radius) * 0.75 * 1px), 
+      color-mix(in srgb, var(--faded-circle-bg) 0%, transparent) calc(var(--radius) * 1px)
+    );
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 0;
+}
+
+@media (max-width: 768px) {
+
+}

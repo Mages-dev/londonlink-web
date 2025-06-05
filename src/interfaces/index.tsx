@@ -18,6 +18,28 @@ export interface MenuProps {
   children?: ReactNode;
 }
 
+export interface BgCircleProps {
+  x?: string
+  y?: string
+  radius?: string
+}
+
+export interface RoundedFadeProps {
+	top?: number
+  children?: ReactNode
+}
+
+export interface SmallCardProps {
+	title?: string
+	icon?: string
+	children?: ReactNode
+}
+
+export interface ImageCardProps {
+	image?: string
+	caption?: string
+}
+
 export interface NavBarProps {
 	sections: string[];
 	titles: string[];
