@@ -1,12 +1,13 @@
-import styles from "../Home.module.css"
+import parentStyles from "../Home.module.css"
+import styles from "./Vantagens.module.css"
 import BgLeftRoundedFade from "@/Common/BgLeftRoundedFade"
-import SmallCard from "@/components/_common/SmallCard"
+import SmallCard from "@/Common/SmallCard"
 
 const Vantagens: React.FC = () => {
 	return (
     <div className={styles.vantagensContainer}>
       <BgLeftRoundedFade top={320}>
-        <span className={`${styles.bold}`}>Algumas de suas vantagens</span><br />
+        <span className={`${parentStyles.bold}`}>Algumas de suas vantagens</span><br />
         como aluno incluem:
         <div className={styles.cardsContainer}>
           <SmallCard title="Aulas Personalizadas" icon="home-ap">

@@ -1,0 +1,9 @@
+.mapa {
+  margin: 0 auto;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  width: clamp(290px, 30vw, 700px);
+  height: 400px;
+  box-shadow: 15px 15px 20px 
+  color-mix(in srgb, var(--shadow-color) 65%, transparent);
+}

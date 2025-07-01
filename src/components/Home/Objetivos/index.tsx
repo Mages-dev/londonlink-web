@@ -1,15 +1,16 @@
-import styles from "../Home.module.css"
+import parentStyles from "../Home.module.css"
+import styles from "./Objetivos.module.css"
 import BgRightRoundedFade from "@/Common/BgRightRoundedFade"
 import ImageCard from "@/Common/ImageCard"
 
 const Objetivos: React.FC = () => {
 	return (
-    <div className={styles.objetivosContainer}>
+    <div className={styles.container}>
       <BgRightRoundedFade top={580}>
         <div className={styles.titlesContainer}>
           <div className={styles.mainTitle}>
           Diga-nos exatamente quais são<br />
-          os seus objetivos e <span className={`${styles.bold}`}>criaremos<br />um curso só para você!</span>
+          os seus objetivos e <span className={`${parentStyles.bold}`}>criaremos<br />um curso só para você!</span>
           </div>
           <div className={styles.secondaryTitle}>
           Estamos prontos para projetar um curso totalmente<br />

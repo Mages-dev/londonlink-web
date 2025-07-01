@@ -1,0 +1,21 @@
+.container {
+  width: 200px;
+  height: auto;
+  border: 3px solid var(--home-testimonial-picture-border-color);
+  border-left: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  
+  border-radius: 20px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+
+  /* Adicionando o deslocamento */
+  position: relative;
+}
+
+.picture {
+  border-radius: 20px;
+  position: relative;
+  left: -20px; /* Move a imagem 10px para a esquerda */
+}

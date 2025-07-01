@@ -1,0 +1,43 @@
+.container {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.titlesContainer {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: flex-start;
+  margin-bottom: 50px;
+}
+
+.mainTitle {
+  flex: 1;
+  max-width: 50%;
+  font-size: 2cap;
+  line-height: 1.5cap;
+  color: var(--home-card-font-color);
+}
+
+.secondaryTitle {
+  flex: 1;
+  max-width: 50%;
+  font-size: 1.2cap;
+  color: var(--home-card-title-font-color);
+}
+
+.imageCardsContainer {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  padding: 1rem 0;
+  left: 200px;
+  width: calc(100% - 200px);
+}
+
+.imageCardsContainer::-webkit-scrollbar {
+  display: none;
+}

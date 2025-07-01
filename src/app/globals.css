@@ -26,7 +26,12 @@
   --home-card-icon-color: #ff0000;
   --home-imagecard-label-color: #1f2937;
   --home-imagecard-label-bg-color: #ffffff;
+  --home-testimonial-picture-border-color: #ff0000;
+  --home-testimonial-title-color: #818181;
+  --home-testimonial-subtitle-color: #ffffff;
+  --contact-bottom-gradient-color: #818181;
 }
+  
 
 [data-theme="dark"] {
   --primary: #3b82f6;
@@ -53,6 +58,10 @@
   --home-card-icon-color: #ffffff;
   --home-imagecard-label-color: #1f2937;
   --home-imagecard-label-bg-color: #ffffff;
+  --home-testimonial-picture-border-color: #ff0000;
+  --home-testimonial-title-color: #ffffff;
+  --home-testimonial-subtitle-color: #000000;
+  --contact-bottom-gradient-color: #53acff;
 }
 
 html {
@@ -109,4 +118,16 @@ body::before {
   scrollbar-width: thin;
   scrollbar-color: #888 #f1f1f1;
   font-family: "Open Sans", sans-serif;
+}
+
+/* Estilo para as seções */
+section {
+  display: flex;
+  flex-direction: column; /* Colocar os filhos em uma coluna */
+  justify-content: center; /* Centralizar o conteúdo verticalmente */
+  align-items: center; /* Centralizar o conteúdo horizontalmente */
+}
+
+section > div {
+  width: 100%;
 }

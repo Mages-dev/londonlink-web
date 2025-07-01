@@ -1,0 +1,32 @@
+/* Configuração do componente */
+.component {
+  display: flex;
+  flex-direction: column; /* Posiciona os componentes verticalmente */
+  width: calc(100% - 2rem);
+  max-width: 1400px;
+  position: relative; /* Garante que elementos absolutos sejam posicionados em relação ao pai */
+  min-height: 100vh; /* Garante que o componente tenha altura mínima baseada no viewport */
+  padding-top: 20vh;
+}
+
+.component::before {
+  content: "";
+  position: absolute;
+  bottom: -10px; /* Alinha ao final do componente */
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100vw - 10px); /* Cobre toda a largura da janela */
+  height: 50vh; /* Ajuste conforme necessário */
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--contact-bottom-gradient-color) 0%, transparent) 0%,
+    color-mix(in srgb, var(--contact-bottom-gradient-color) 100%, transparent) 100%
+  );
+  z-index: -1; /* Coloca atrás do conteúdo */
+}
+
+/* Classes comuns */
+.bold {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bolder;
+}

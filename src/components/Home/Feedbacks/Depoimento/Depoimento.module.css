@@ -1,0 +1,38 @@
+.depoimentoCard {
+  display: grid;
+  grid-template-columns: auto 1fr; /* Alinhar imagem e conteúdo lado a lado */
+  gap: 20px; /* Espaço entre imagem e texto */
+  align-items: center;
+  border-radius: 12px;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.depoimentoCard:hover {
+  transform: translateY(-5px);
+}
+
+.depoimentoImage {
+  flex-shrink: 0; /* Garante que a imagem mantenha seu tamanho */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: color-mix(in srgb, var(--background-color-b) 60%, transparent);
+}
+
+.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: var(--text);
+}
+
+.texto {
+  font-size: 0.95rem;
+  color: var(--text);
+  line-height: 1.5;
+}

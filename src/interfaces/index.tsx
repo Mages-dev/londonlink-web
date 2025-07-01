@@ -12,6 +12,17 @@ export interface Props {
 	id: string;
 }
 
+export interface ImgProps {
+	src: string;
+}
+
+export interface DepoimentoProps {
+	image: string;
+	title: string;
+	children: ReactNode;
+}
+
+
 export interface MenuProps {
 	logoOpacity?: number;
 	activeSection: string;

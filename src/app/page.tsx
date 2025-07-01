@@ -32,7 +32,7 @@ const SectionObserver = ({ section }: { section: string }) => {
   }, [isVisible, hasBeenVisible]);
 
   return (
-    <section id={section} className="min-h-screen py-12">
+    <section id={section} className="min-h-screen flex flex-col items-center justify-center">
       <div ref={ref} className="h-4" /> {/* Marcador invisível para observação */}
       
       {(isVisible || hasBeenVisible) && (
@@ -48,7 +48,7 @@ export default function Home() {
   const { sections } = useSections();
 
   return (
-    <div className="container mx-auto px-4">
+    <div className="container flex flex-col gap-8 px-4 mx-auto">
       {sections.map((section) => (
         <SectionObserver key={section} section={section} />
       ))}

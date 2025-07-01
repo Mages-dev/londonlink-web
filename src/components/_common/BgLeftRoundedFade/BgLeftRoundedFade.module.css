@@ -1,6 +1,4 @@
 .gradientContainer {
-  position: relative;
-  top: calc(var(--top) * 1px);
   left: 0;
   width: calc(100% - 2rem);
   min-height: 200px;
@@ -8,7 +6,6 @@
 }
 
 .gradient {
-  position: absolute;
   width: calc(100% - 3rem);
   min-height: 100%;
   border-top-right-radius: 150px;

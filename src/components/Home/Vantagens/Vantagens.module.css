@@ -1,0 +1,19 @@
+.vantagensContainer {
+  position: relative;
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.cardsContainer {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1.5rem;
+  justify-content: flex-start;
+  align-items: stretch;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.cardsContainer::-webkit-scrollbar {
+  display: none;
+}
