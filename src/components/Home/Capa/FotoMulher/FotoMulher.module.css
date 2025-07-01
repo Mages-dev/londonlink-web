@@ -1,4 +1,3 @@
-/* components/_common/BgFadedCircle/BgFadedCircle.module.css */
 .principalContainer {
   position: absolute;
   top: 0;
@@ -11,6 +10,7 @@
   z-index: 0;
   
   transition: all 0.3s ease;
+  pointer-events: none;
 }
 
 .principal {
@@ -25,6 +25,7 @@
   height: calc(var(--radius) * 2 * 1px);
 
   z-index: 0;
+  pointer-events: none;
 }
 
 .fotoPrincipal {
@@ -35,6 +36,7 @@
   background-repeat: no-repeat;
   background-size: cover;
   clip-path: path('M0,570 C200,520,390,560,500,580 C413,0,400,0,210,0 C0,0,0,300,0,600 Z');
+  pointer-events: none;
 }
 
 @media (max-width: 768px) {

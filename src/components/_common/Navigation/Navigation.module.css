@@ -59,21 +59,6 @@
   margin-top: 0.5rem; /* Alinha visualmente com a nav */
 }
 
-.button {
-  min-width: 150px;
-  min-height: 40px;
-  max-height: 2em;
-  border: 2px solid var(--bg-menubar-button);
-  color: var(--bg-menubar-button);
-  border-radius: 9999px;
-}
-
-.button:hover {
-  border: 2px solid var(--accent);
-  color: var(--accent);
-  cursor: pointer;
-}
-
 /* Estilos gerais */
 .navItem, .sidebarItem {
   position: relative;

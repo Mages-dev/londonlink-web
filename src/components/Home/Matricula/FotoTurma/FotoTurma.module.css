@@ -1,0 +1,26 @@
+.container {
+  width: calc(100% - 2rem);
+  max-width: 1400px;
+  height: 700px;
+}
+
+.foto {
+  position: relative;
+  margin: 0 auto;
+  top: -600px;
+}
+
+.gradient {
+  width: 700px;
+  height: 700px;
+  background:
+    linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+  background-repeat: no-repeat;
+  background-size: cover;
+  clip-path: circle(calc(350px) at 50% calc(50% + 70px));
+  margin: 0 auto;
+}

@@ -12,6 +12,8 @@
   --text-menubar-button: #dddddd;
   --logo-link-color: #191919;
   --shadow-color: #818181;
+  --button-color: #969696;
+  --button-background-color: #000000;
   --bg-menubar: #dddddd;
   --bg-menubar-button: #969696;
   --bg-menucontainer-color-a: #818181;
@@ -45,6 +47,8 @@
   --text-menubar-button: #3f3f3f;
   --logo-link-color: #f9fafb;
   --shadow-color: #cccccc;
+  --button-color: #dddddd;
+  --button-background-color: #0d0d33;
   --bg-menubar: #222222;
   --bg-menubar-button: #dddddd;
   --bg-menucontainer-color-a: #4d4d4d;

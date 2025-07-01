@@ -16,12 +16,17 @@ export interface ImgProps {
 	src: string;
 }
 
+export interface ButtonProps {
+	caption?: string
+	invertedColors?: boolean
+	transparentBackground?: boolean
+}
+
 export interface DepoimentoProps {
 	image: string;
 	title: string;
 	children: ReactNode;
 }
-
 
 export interface MenuProps {
 	logoOpacity?: number;

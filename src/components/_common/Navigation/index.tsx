@@ -3,13 +3,11 @@ import { useState, useEffect } from "react"
 import { MenuProps } from "@/interfaces"
 import { useSections } from "@/context";
 import { ThemeSwitcher } from "@/Common/ThemeSwitcher";
+import Button from "@/Common/Button";
 import Logo from "./Logo";
 import Navbar from "./Navbar"
 import Sidebar from "./Sidebar"
 import styles from "./Navigation.module.css"
-import Button from "./Button";
-
-
 
 const Navigation: React.FC<MenuProps> = ({
   //logoOpacity = 1,
@@ -96,7 +94,9 @@ const Navigation: React.FC<MenuProps> = ({
             scrollToSection={scrollToSection}
           />
           <div className="hidden md:block">
-            <Button />
+            <Button
+              caption="Pré-matrícula"
+              transparentBackground={true} />
           </div>
         </nav>
         <ThemeSwitcher />

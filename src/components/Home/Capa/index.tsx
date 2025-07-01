@@ -2,6 +2,7 @@ import BgFadedCircle from "@/Common/BgFadedCircle"
 import FotoMulher from "./FotoMulher"
 import Titulo from "./Titulo"
 import styles from "./Capa.module.css"
+import Button from "@/Common/Button";
 
 const Capa: React.FC = () => {
 	return (
@@ -11,6 +12,9 @@ const Capa: React.FC = () => {
       <BgFadedCircle x="67%" y="20%" radius="200" />
       <FotoMulher x="47%" y="25%" radius="290" />
       <Titulo />
+      <div className={styles.buttonContainer}>
+        <Button caption="Pré-matrícula" invertedColors={true} />
+      </div>
     </div>
 	)
 }
