@@ -23,7 +23,7 @@
   flex: 1;
   max-width: 50%;
   font-size: 1.2cap;
-  color: var(--home-card-title-font-color);
+  color: var(--home-objectives-secondary-title-color);
 }
 
 .imageCardsContainer {
