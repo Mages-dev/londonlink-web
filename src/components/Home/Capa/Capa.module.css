@@ -1,17 +1,19 @@
-.capa {
-  position: relative;
-  height: 850px;
+.component {
+  height: 750px;
 }
 
 .textBlock {
-  position: relative;
+  width: 30%;
+  margin-top: calc(750px * .35);
+  margin-left: 10%;
   line-height: 5cap;
   z-index: 2000;
 }
 
 .paragrafo {
   margin-top: 25px;
-  line-height: 25px;
+  line-height: 2cap;
+  font-size: 2cap;
 }
 
 .h1 {
