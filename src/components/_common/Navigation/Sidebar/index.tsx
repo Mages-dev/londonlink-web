@@ -1,5 +1,6 @@
 import React from "react";
 import { SideBarProps } from "@/interfaces";
+import { useLanguage } from "@/context";
 import styles from "../Navigation.module.css";
 
 const Sidebar: React.FC<SideBarProps> = ({
@@ -11,6 +12,7 @@ const Sidebar: React.FC<SideBarProps> = ({
   isActive,
   scrollToSection
 }) => {
+  const { t } = useLanguage();
   return (
     <div
       className={`${styles.sidebarContainer} ${
@@ -43,7 +45,7 @@ const Sidebar: React.FC<SideBarProps> = ({
               toggle();
             }}
           >
-            {titles[index]}
+            {t(`menu.${titles[index]}`)}
           </button>
         ))}
       </div>

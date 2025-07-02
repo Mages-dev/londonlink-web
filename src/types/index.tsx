@@ -14,3 +14,9 @@ export type ThemeContextType = {
   themeName: ThemeName;
   setTheme: (name: ThemeName) => void;
 };
+
+export type Language = "pt" | "en";
+
+export type Translations = {
+  [key: string]: string;
+};

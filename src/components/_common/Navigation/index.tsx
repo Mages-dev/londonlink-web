@@ -1,8 +1,9 @@
 "use client";
 import { useState, useEffect } from "react"
 import { MenuProps } from "@/interfaces"
-import { useSections } from "@/context";
+import { useSections, useLanguage } from "@/context";
 import { ThemeSwitcher } from "@/Common/ThemeSwitcher";
+import LanguageSwitcher from "@/Common/LanguageSwitcher";
 import Button from "@/Common/Button";
 import Logo from "./Logo";
 import Navbar from "./Navbar"
@@ -10,9 +11,9 @@ import Sidebar from "./Sidebar"
 import styles from "./Navigation.module.css"
 
 const Navigation: React.FC<MenuProps> = ({
-  //logoOpacity = 1,
   activeSection: initialActiveSection = 'home'
 }) => {
+  const { t } = useLanguage();
   const [activeSection, setActiveSection] = useState(initialActiveSection);
   const { sections, titles } = useSections();
   const [isOpen, setIsOpen] = useState(false);
@@ -95,11 +96,12 @@ const Navigation: React.FC<MenuProps> = ({
           />
           <div className="hidden md:block">
             <Button
-              caption="Pré-matrícula"
+              caption={String(t("menu.preregistration"))}
               transparentBackground={true} />
           </div>
         </nav>
         <ThemeSwitcher />
+        <LanguageSwitcher />
       </div>
     </div>
   );

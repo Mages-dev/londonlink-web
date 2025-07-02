@@ -1,15 +1,16 @@
 import styles from "./Button.module.css"
 import { ButtonProps } from "@/interfaces"
-
+import { useLanguage } from "@/context";
 const Button: React.FC<ButtonProps> = ({
 	caption = "",
 	invertedColors = false,
 	transparentBackground = false
 
 }) => {
+  const { t } = useLanguage();
   const handleClick = () => {
     const phoneNumber = "5581979012599";
-    const message = "Olá, gostaria de informações sobre a pré-matrícula na London Link!";
+    const message = String(t("home.whatsapp.message"));
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };

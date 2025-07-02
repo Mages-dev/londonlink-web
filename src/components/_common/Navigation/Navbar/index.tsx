@@ -1,5 +1,6 @@
 import React from "react";
 import { NavBarProps } from "@/interfaces";
+import { useLanguage } from "@/context";
 import styles from "../Navigation.module.css";
 
 const Navbar: React.FC<NavBarProps> = ({
@@ -10,6 +11,7 @@ const Navbar: React.FC<NavBarProps> = ({
   isActive,
   scrollToSection
 }) => {
+  const { t } = useLanguage();
   return (
     <div className="w-full sticky top-0">
       <div className="container mx-auto px-4 h-full">
@@ -41,7 +43,7 @@ const Navbar: React.FC<NavBarProps> = ({
                 }`}
                 onClick={() => scrollToSection(section)}
               >
-                {titles[index]}
+                {t(`menu.${titles[index]}`)}
               </button>
             ))}
           </div>

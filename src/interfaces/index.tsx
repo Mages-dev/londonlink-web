@@ -1,4 +1,11 @@
-import { ReactNode } from 'react';
+import { JSX, ReactNode } from 'react';
+import { Language } from '@/types';
+
+export interface LanguageContextType {
+  language: Language;
+  setLanguage: (lang: Language) => void;
+  t: (key: string, parentStyles?: Record<string, string>) => string | JSX.Element;
+}
 
 export interface SectionComponentProps {
   id: string;

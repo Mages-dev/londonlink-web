@@ -4,6 +4,7 @@ import dynamic from 'next/dynamic';
 import { useSections } from '@/context';
 import { useOnScreen } from '@/hooks/useOnScreen';
 import { Props } from '@/interfaces';
+import { useLanguage } from "@/context";
 
 // Carregamento dinâmico com lazy loading para cada componente
 const componentMap = {
@@ -17,6 +18,7 @@ const componentMap = {
 };
 
 const SectionObserver = ({ section }: { section: string }) => {
+  const { t } = useLanguage();
   const ref = useRef<HTMLDivElement>(null);
   const isVisible = useOnScreen(
     ref as RefObject<Element>,
@@ -36,7 +38,7 @@ const SectionObserver = ({ section }: { section: string }) => {
       <div ref={ref} className="h-4" /> {/* Marcador invisível para observação */}
       
       {(isVisible || hasBeenVisible) && (
-        <Suspense fallback={<div className="text-center">Carregando {section}...</div>}>
+        <Suspense fallback={<div className="text-center">{t("loading")}...</div>}>
           <Component id={section} />
         </Suspense>
       )}
