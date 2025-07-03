@@ -8,6 +8,7 @@
   --background-color-b: #ffffff;
   --accent: #ff0000;
   --text: #1f2937;
+  --text-inverted: #ffffff;
   --text-menubar: #444444;
   --text-menubar-button: #dddddd;
   --logo-link-color: #191919;
@@ -21,7 +22,7 @@
   --faded-circle-bg: #818181;
   --gradient-circle-bg: #818181;
   --home-card-title-font-color: #ffffff;
-  --home-card-font-color: #ff0000;
+  --home-card-font-color: #ffffff;
   --home-card-bg-color: #949494;
   --home-card-borders-color: #ff0000;
   --home-card-icon-bg-color: #dddddd;
@@ -33,6 +34,7 @@
   --home-testimonial-title-color: #818181;
   --home-testimonial-subtitle-color: #ffffff;
   --contact-bottom-gradient-color: #818181;
+  --about-image-borders-color: #ff0000;
 }
   
 
@@ -43,6 +45,7 @@
   --background-color-b: #1a62c0;
   --accent: #f59e0b;
   --text: #f9fafb;
+  --text-inverted: #000000;
   --text-menubar: #dddddd;
   --text-menubar-button: #3f3f3f;
   --logo-link-color: #f9fafb;
@@ -68,6 +71,7 @@
   --home-testimonial-title-color: #ffffff;
   --home-testimonial-subtitle-color: #000000;
   --contact-bottom-gradient-color: #53acff;
+  --about-image-borders-color: #ff0000;
 }
 
 html {

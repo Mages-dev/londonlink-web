@@ -13,10 +13,18 @@
 
 .mainTitle {
   flex: 1;
+  top: 20px !important;
+  width: 500px !important;
   max-width: 50%;
-  font-size: 2cap;
+  font-size: 2cap !important;
   line-height: 1.5cap;
-  color: var(--home-card-font-color);
+  background: linear-gradient(
+    120deg,
+    color-mix(in srgb, var(--text) 100%, transparent) 190px,
+    color-mix(in srgb, var(--text-inverted) 100%, transparent) 190px
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .secondaryTitle {

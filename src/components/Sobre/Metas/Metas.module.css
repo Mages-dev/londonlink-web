@@ -1,10 +1,82 @@
 /* Configuração do componente */
 .component {
-  border: 4px solid lime;
   display: flex;
   flex-direction: column; /* Posiciona os componentes verticalmente */
   width: 100%;
   max-width: 1400px;
   position: relative; /* Garante que elementos absolutos sejam posicionados em relação ao pai */
   margin: 0 auto;
+  height: 85vh;
+  margin-bottom: 10vh;
+}
+
+.component div {
+  height: 100%;
+  font-size: 1.55cap;
+  line-height: 1.4cap;
+}
+
+.titulo {
+  position: absolute;
+  top: 20px !important;
+  width: 700px !important;
+  font-size: 3cap !important;
+  line-height: 1.8cap !important;
+  background: linear-gradient(
+    125deg,
+    color-mix(in srgb, var(--text) 100%, transparent) 187px,
+    color-mix(in srgb, var(--text-inverted) 100%, transparent) 170px
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.texto {
+  position: absolute;
+  top: 30%;
+  width: 40%;
+  right: 5%;
+  font-size: 1.55cap !important;
+  line-height: 1.8cap !important;
+}
+
+.buttonContainer {
+  position: absolute;
+  width: 300px;
+  right: 15%;
+  top: 55%;
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 2%;
+}
+
+.buttonContainer button {
+  width: 100%;
+}
+
+.containerImagem {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 40px;
+}
+
+.frame {
+  position: absolute;
+  border: 3px solid var(--about-image-borders-color);
+  width: 340px;
+  height: 530px !important;
+  top: 30%;
+  left: 15%;
+  border-radius: 20px;
+  overflow: visible;
+}
+
+.imagem {
+  position: absolute;
+  width: 400px;
+  height: auto;
+  top: 25%;
+  left: 0;
+  border-radius: 20px;
 }
