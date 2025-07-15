@@ -1,0 +1,67 @@
+/* Configuração do componente */
+.component {
+  display: flex;
+  flex-direction: column; /* Posiciona os componentes verticalmente */
+  width: 100%;
+  max-width: 1400px;
+  position: relative; /* Garante que elementos absolutos sejam posicionados em relação ao pai */
+  margin: 0 auto;
+  height: 60vh;
+  margin-bottom: 5vh;
+}
+
+.component div {
+  height: 100%;
+  font-size: 1.55cap;
+  line-height: 1.4cap;
+}
+
+.titulo {
+  position: absolute;
+  top: 20px !important;
+  width: 45% !important;
+  font-size: 3.5cap !important;
+}
+
+.texto {
+  position: absolute;
+  top: 80px;
+  width: 50%;
+  right: 10%;
+  font-size: 1.55cap !important;
+  line-height: 1.6cap !important;
+  background: linear-gradient(
+    90deg,
+    color-mix(in srgb, var(--text) 100%, transparent) 48%,
+    color-mix(in srgb, var(--text-inverted) 100%, transparent) 50%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.containerImagem {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  overflow: visible;
+}
+
+.frame {
+  position: absolute;
+  border: 3px solid var(--about-image-borders-color);
+  width: 300px;
+  height: 400px !important;
+  top: 10%;
+  left: 15%;
+  border-radius: 20px;
+}
+
+.imagem {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  top: 5%;
+  left: 10%;
+  border-radius: 20px;
+}

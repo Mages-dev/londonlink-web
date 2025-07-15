@@ -1,0 +1,22 @@
+/* Configuração do componente */
+.component {
+  display: flex;
+  width: calc(100% - 2rem);
+  max-width: 1400px;
+  min-height: 30vh;
+  position: absolute;
+  bottom: 0;
+}
+
+.block {
+  width: 33%;
+  text-align: center;
+}
+
+.block div {
+  padding-bottom: 15px;
+}
+
+.block div img {
+  margin: 0 auto;
+}

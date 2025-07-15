@@ -13,11 +13,11 @@ export const translations: Record<Language, Translations> = {
 };
 
 const defaultValues = {
-  //sections: Object.keys(components),
-  sections: ['home', 'sobre', 'livros', 'galeria', 'contato'],
-  titles: ['home', 'about', 'books', 'galery', 'contact'],
+  //sections: ['home', 'sobre', 'livros', 'galeria', 'contato'],
+  //titles: ['home', 'about', 'books', 'galery', 'contact'],
+  sections: ['home', 'sobre', 'livros', 'contato'],
+  titles: ['home', 'about', 'books', 'contact'],
   defaultTitle: "LondonLink",
-  //components,
 };
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
