@@ -9,6 +9,12 @@
   text-align: center;
   margin-top: 10%;
   margin-bottom: 2%;
+  color: var(--text);
+  text-shadow: 
+  -1px -1px 1px var(--text-contour),  
+  1px -1px 1px var(--text-contour),
+  -1px  1px 1px var(--text-contour),
+  1px  1px 1px var(--text-contour);
 }
 
 .buttonContainer {
@@ -22,4 +28,10 @@
   font-size: 2cap;
   text-align: center;
   margin-bottom: 5%;
+  color: var(--text);
+  text-shadow: 
+  -1px -1px 1px var(--text-contour),  
+  1px -1px 1px var(--text-contour),
+  -1px  1px 1px var(--text-contour),
+  1px  1px 1px var(--text-contour);
 }

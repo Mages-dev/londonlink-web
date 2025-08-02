@@ -13,10 +13,10 @@ export const translations: Record<Language, Translations> = {
 };
 
 const defaultValues = {
-  //sections: ['home', 'sobre', 'livros', 'galeria', 'contato'],
-  //titles: ['home', 'about', 'books', 'galery', 'contact'],
-  sections: ['home', 'sobre', 'livros', 'contato'],
-  titles: ['home', 'about', 'books', 'contact'],
+  sections: ['home', 'sobre', 'livros', 'galeria', 'contato'],
+  titles: ['home', 'about', 'books', 'galery', 'contact'],
+  //sections: ['home', 'sobre', 'livros', 'contato'],
+  //titles: ['home', 'about', 'books', 'contact'],
   defaultTitle: "LondonLink",
 };
 

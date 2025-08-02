@@ -18,13 +18,12 @@
   max-width: 50%;
   font-size: 2cap !important;
   line-height: 1.5cap;
-  background: linear-gradient(
-    120deg,
-    color-mix(in srgb, var(--text) 100%, transparent) 190px,
-    color-mix(in srgb, var(--text-inverted) 100%, transparent) 190px
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--text);
+  text-shadow: 
+  -1px -1px 1px var(--text-contour),  
+  1px -1px 1px var(--text-contour),
+  -1px  1px 1px var(--text-contour),
+  1px  1px 1px var(--text-contour);
 }
 
 .secondaryTitle {
@@ -32,7 +31,11 @@
   max-width: 50%;
   font-size: 1.2cap;
   color: var(--home-objectives-secondary-title-color);
-}
+  text-shadow: 
+  -1px -1px 1px var(--text-contour),  
+  1px -1px 1px var(--text-contour),
+  -1px  1px 1px var(--text-contour),
+  1px  1px 1px var(--text-contour);}
 
 .imageCardsContainer {
   position: relative;

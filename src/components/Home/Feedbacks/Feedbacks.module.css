@@ -8,11 +8,20 @@
 
 .depoimentosTitulo {
   color: var(--home-testimonial-title-color);
+  text-shadow: 
+  -1px -1px 1px var(--text-contour),  
+  1px -1px 1px var(--text-contour),
+  -1px  1px 1px var(--text-contour),
+  1px  1px 1px var(--text-contour);
 }
 
 .depoimentosSubtexto {
   color: var(--home-testimonial-subtitle-color);
-}
+  text-shadow: 
+  -1px -1px 1px var(--text-contour),  
+  1px -1px 1px var(--text-contour),
+  -1px  1px 1px var(--text-contour),
+  1px  1px 1px var(--text-contour);}
 
 .depoimentosGrid {
   position: relative;

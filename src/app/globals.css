@@ -8,6 +8,7 @@
   --background-color-b: #ffffff;
   --accent: #ff0000;
   --text: #1f2937;
+  --text-contour: #ffffff;
   --text-inverted: #ffffff;
   --text-menubar: #444444;
   --text-menubar-button: #dddddd;
@@ -44,7 +45,8 @@
   --background-color-a: #1f2937;
   --background-color-b: #1a62c0;
   --accent: #f59e0b;
-  --text: #f9fafb;
+  --text: #ffffff;
+  --text-contour: #818181;
   --text-inverted: #000000;
   --text-menubar: #dddddd;
   --text-menubar-button: #3f3f3f;
