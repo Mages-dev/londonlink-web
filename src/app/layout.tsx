@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Navigation from "@/Common/Navigation";
+import { ForceSectionProvider } from '@/context/ForceSectionContext';
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/context";
 import { ThemeApplier } from "@/Common/ThemeApplier";
@@ -52,11 +53,13 @@ export default function RootLayout({
     <html lang="pt-BR">
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased pt-20`}>
         <ThemeProvider>
-          <ThemeApplier />
-          <header style={{ padding: "1rem", display: "flex", justifyContent: "flex-end" }}>
-            <Navigation activeSection="home" />
-          </header>
-          {children}
+          <ForceSectionProvider>
+            <ThemeApplier />
+            <header style={{ padding: "1rem", display: "flex", justifyContent: "flex-end" }}>
+              <Navigation activeSection="home" />
+            </header>
+            {children}
+          </ForceSectionProvider>
         </ThemeProvider>
       </body>
     </html>

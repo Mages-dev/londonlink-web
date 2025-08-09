@@ -10,11 +10,12 @@
     "refresh": "git pull && pm2 stop londonlink && pm2 delete londonlink && npm install && npm run build &&  pm2 start npm --name \"londonlink\" -- start"
   },
   "dependencies": {
+    "@itseasy21/react-elastic-carousel": "^1.0.2",
     "@types/styled-components": "^5.1.34",
     "babel-plugin-styled-components": "^2.1.4",
-    "keen-slider": "^6.8.6",
     "next": "15.4.5",
     "react": "19.1.1",
+    "react-bootstrap": "^2.10.10",
     "react-dom": "19.1.1",
     "styled-components": "^6.1.17"
   },

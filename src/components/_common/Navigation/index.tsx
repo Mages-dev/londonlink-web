@@ -3,6 +3,7 @@ import { useState, useEffect } from "react"
 import { MenuProps } from "@/interfaces"
 import { useSections, useLanguage } from "@/context";
 import { ThemeSwitcher } from "@/Common/ThemeSwitcher";
+import { useForceSection } from '@/context/ForceSectionContext';
 import LanguageSwitcher from "@/Common/LanguageSwitcher";
 import Button from "@/Common/Button";
 import Logo from "./Logo";
@@ -18,23 +19,29 @@ const Navigation: React.FC<MenuProps> = ({
   const { sections, titles } = useSections();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { setForceSection } = useForceSection();
 
   // Função de scroll melhorada
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const headerOffset = 100; // Ajuste conforme a altura do header
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+    setForceSection(sectionId); // força carregamento da section
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-      
-      setActiveSection(sectionId);
-      setIsOpen(false); // Fecha o menu mobile após clique
-    }
+    // tenta scrollar quando a section já existir no DOM
+    const tryScroll = () => {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerOffset = 100;
+        const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+
+        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+        setActiveSection(sectionId);
+        setIsOpen(false);
+        setForceSection(null); // limpa flag após scroll
+      } else {
+        requestAnimationFrame(tryScroll);
+      }
+    };
+
+    requestAnimationFrame(tryScroll);
   };
 
   // Função de verificação de seção ativa

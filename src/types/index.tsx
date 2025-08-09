@@ -20,3 +20,9 @@ export type Language = "pt" | "en";
 export type Translations = {
   [key: string]: string;
 };
+
+export type CarouselRef = {
+  goTo: (index: number) => void;
+  getCurrentIndex: () => number;
+  getTotalPages: () => number;
+};

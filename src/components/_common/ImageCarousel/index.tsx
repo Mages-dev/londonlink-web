@@ -1,131 +1,162 @@
-'use client';
+"use client";
 
-import { useEffect, useState, useRef, useCallback } from 'react';
-import { useKeenSlider } from 'keen-slider/react';
-import 'keen-slider/keen-slider.min.css';
+import React, { useEffect, useRef, useState, useCallback } from "react";
+import Carousel from "@itseasy21/react-elastic-carousel";
+import styles from "./ImageCarousel.module.css";
+import Image from "next/image";
 
-import styles from './ImageCarousel.module.css';
+const breakPoints = [
+  { width: 0, itemsToShow: 1 },
+  { width: 768, itemsToShow: 2 },
+  { width: 1024, itemsToShow: 3 },
+];
 
-export default function ImageCarousel() {
+interface CarouselCallbackPayload {
+  index: number;
+}
+
+export default function GalleryCarousel() {
   const [images, setImages] = useState<string[]>([]);
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [sliderReady, setSliderReady] = useState(false);
-const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>(
-  sliderReady
-    ? {
-        loop: true,
-        slides: { perView: 1 },
-        slideChanged(slider) {
-          setCurrentSlide(slider.track.details.rel);
-          restartAutoplay();
-        },
-        created() {},
-      }
-    : undefined
-);
+  const [currentPage, setCurrentPage] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-
-  const timerRef = useRef<NodeJS.Timeout | null>(null);
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Verifica se container tem largura > 0
+  // Carrega imagens
   useEffect(() => {
-    if (!containerRef.current) return;
+    fetch("/api/gallery")
+      .then((r) => r.json())
+      .then((list: string[]) => setImages(list || []))
+      .catch((err) => {
+        console.error("Erro ao carregar imagens:", err);
+        setImages([]);
+      });
+  }, []);
 
-    const observer = new ResizeObserver(([entry]) => {
-      if (entry.contentRect.width > 0 && entry.contentRect.height > 0) {
-        setSliderReady(true);
+  // Quantos itens mostrar no breakpoint atual
+  const getItemsToShow = useCallback((): number => {
+    const width =
+      containerRef.current?.clientWidth ??
+      (typeof window !== "undefined" ? window.innerWidth : 0);
+
+    let items = 1;
+    for (const bp of breakPoints) {
+      if (width >= bp.width) {
+        items = bp.itemsToShow;
       }
-    });
-
-    observer.observe(containerRef.current);
-
-    return () => observer.disconnect();
-  }, []);
-
-  const stopAutoplay = useCallback(() => {
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
     }
+    return items;
   }, []);
 
-  const startAutoplay = useCallback(() => {
-    stopAutoplay();
-    timerRef.current = setInterval(() => {
-      instanceRef.current?.next();
+  // Total de páginas baseado no breakpoint
+  const computeTotalPages = useCallback((): number => {
+    const itemsToShow = getItemsToShow();
+    return Math.max(1, Math.ceil(images.length / itemsToShow));
+  }, [images.length, getItemsToShow]);
+
+  // Autoplay com loop infinito baseado em páginas
+  useEffect(() => {
+    if (!images.length) return;
+
+    const interval = setInterval(() => {
+      if (isPaused) return;
+      const container = containerRef.current;
+      if (!container) return;
+
+      const totalPages = computeTotalPages();
+      if (totalPages <= 1) return;
+
+      const nextPage = (currentPage + 1) % totalPages;
+      const dots = container.querySelectorAll<HTMLButtonElement>("button.rec-dot");
+
+      if (dots.length > 0) {
+        dots[nextPage]?.click();
+      } else {
+        // fallback: simula clique na seta
+        const arrows = container.querySelectorAll<HTMLButtonElement>("button.rec-arrow");
+        if (nextPage === 0) {
+          arrows[0]?.click(); // volta para primeira página
+        } else {
+          arrows[1]?.click(); // avança
+        }
+      }
     }, 3000);
-  }, [stopAutoplay, instanceRef]);
 
-  const restartAutoplay = useCallback(() => {
-    stopAutoplay();
-    startAutoplay();
-  }, [stopAutoplay, startAutoplay]);
+    return () => clearInterval(interval);
+  }, [images.length, currentPage, isPaused, computeTotalPages]);
 
-  useEffect(() => {
-    fetch('/api/gallery')
-      .then((res) => res.json())
-      .then(setImages);
-  }, []);
+  function handleNextEnd(payload: CarouselCallbackPayload) {
+    setCurrentPage(payload.index / getItemsToShow());
+  }
+  function handlePrevEnd(payload: CarouselCallbackPayload) {
+    setCurrentPage(payload.index / getItemsToShow());
+  }
 
-  useEffect(() => {
-    if (images.length > 1 && sliderReady) {
-      startAutoplay();
-    }
-    return () => stopAutoplay();
-  }, [images, sliderReady, startAutoplay, stopAutoplay]);
-
-  if (images.length === 0) return <p>Carregando imagens...</p>;
+  if (!images.length) return <p>Carregando imagens...</p>;
 
   return (
-    <div className={styles.carouselWrapper} ref={containerRef}>
-      <div ref={sliderRef} className={`keen-slider ${styles.slider}`}>
-        {images.map((src, index) => (
-          <div className={`keen-slider__slide ${styles.slide}`} key={index}>
-            <div className={styles.imageContainer}>
-              <img
-                src={src}
-                alt={`Imagem ${index + 1}`}
-                className={styles.image}
-              />
-            </div>
+    <div
+      className={styles.carouselWrapper}
+      ref={containerRef}
+      onMouseEnter={() => setIsPaused(true)}
+      onMouseLeave={() => setIsPaused(false)}
+    >
+      <Carousel
+        breakPoints={breakPoints}
+        isRTL={false}
+        itemPadding={[10, 10]}
+        pagination
+        showArrows
+        onNextEnd={handleNextEnd}
+        onPrevEnd={handlePrevEnd}
+      >
+        {images.map((src, i) => (
+          <div
+            key={i}
+            style={{
+              height: 400,
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden",
+            }}
+          >
+            <ImageWithHover src={src} alt={`Imagem ${i + 1}`} />
           </div>
         ))}
-      </div>
+      </Carousel>
+    </div>
+  );
+}
 
-      {sliderReady && instanceRef.current && (
-        <>
-          <button
-            onClick={() => instanceRef.current?.prev()}
-            className={styles.navButton}
-            style={{ left: 10 }}
-            aria-label="Anterior"
-          >
-            ‹
-          </button>
-          <button
-            onClick={() => instanceRef.current?.next()}
-            className={styles.navButton}
-            style={{ right: 10 }}
-            aria-label="Próxima"
-          >
-            ›
-          </button>
-        </>
-      )}
-
-      {sliderReady && instanceRef.current && (
-        <div className={styles.dots}>
-          {images.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => instanceRef.current?.moveToIdx(idx)}
-              className={`${styles.dot} ${currentSlide === idx ? styles.active : ''}`}
-              aria-label={`Ir para slide ${idx + 1}`}
-            />
-          ))}
-        </div>
-      )}
+function ImageWithHover({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        width={1000}
+        height={1000}
+        style={{
+          maxHeight: "100%",
+          maxWidth: "100%",
+          objectFit: "contain",
+          transition: "transform 0.35s ease",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.06)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+        }}
+      />
     </div>
   );
 }
