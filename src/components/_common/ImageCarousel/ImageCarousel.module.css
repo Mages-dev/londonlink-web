@@ -7,7 +7,7 @@
   padding-left: 2%;
   padding-right: 2%;
   position: relative;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: color-mix(in srgb, var(--gallery-carousel-background-color) 20%, transparent);
   border-radius: 20px;
-  border: 2px solid white;
+  border: 2px solid var(--gallery-carousel-border-color);
 }

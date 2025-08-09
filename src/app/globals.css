@@ -35,6 +35,8 @@
   --home-testimonial-title-color: #818181;
   --home-testimonial-subtitle-color: #ffffff;
   --contact-bottom-gradient-color: #818181;
+  --gallery-carousel-background-color: #818181;
+  --gallery-carousel-border-color: #303030;
   --about-image-borders-color: #ff0000;
 }
   
@@ -73,6 +75,8 @@
   --home-testimonial-title-color: #ffffff;
   --home-testimonial-subtitle-color: #000000;
   --contact-bottom-gradient-color: #53acff;
+  --gallery-carousel-background-color: #ffffff;
+  --gallery-carousel-border-color: #ffffff;
   --about-image-borders-color: #ff0000;
 }
 
