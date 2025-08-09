@@ -7,7 +7,7 @@ const Dados: React.FC = () => {
 	const { t } = useLanguage();
   const handleClick = () => {
     const phoneNumber = "5581979012599";
-    const message = String(t("home.whatsapp.message"));
+    const message = String(t("whatsapp.message"));
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
