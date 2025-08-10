@@ -9,7 +9,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const { t } = useLanguage();
   const handleClick = () => {
-    const phoneNumber = "5581979012599";
+    const phoneNumber = String(t("whatsapp.number"));
     const message = String(t("whatsapp.message"));
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");

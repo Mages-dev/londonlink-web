@@ -2,17 +2,17 @@
 import React, { createContext, useContext, useState } from "react";
 
 interface ForceSectionContextType {
-  forceSection: string | null;
-  setForceSection: React.Dispatch<React.SetStateAction<string | null>>;
+  preloadUntil: string | null;
+  setPreloadUntil: React.Dispatch<React.SetStateAction<string | null>>;
 }
 
 const ForceSectionContext = createContext<ForceSectionContextType | undefined>(undefined);
 
 export const ForceSectionProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [forceSection, setForceSection] = useState<string | null>(null);
+  const [preloadUntil, setPreloadUntil] = useState<string | null>(null);
 
   return (
-    <ForceSectionContext.Provider value={{ forceSection, setForceSection }}>
+    <ForceSectionContext.Provider value={{ preloadUntil, setPreloadUntil }}>
       {children}
     </ForceSectionContext.Provider>
   );

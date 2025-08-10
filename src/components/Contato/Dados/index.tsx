@@ -6,7 +6,7 @@ import { useLanguage } from "@/context"
 const Dados: React.FC = () => {
 	const { t } = useLanguage();
   const handleClick = () => {
-    const phoneNumber = "5581979012599";
+    const phoneNumber = String(t("whatsapp.number"));
     const message = String(t("whatsapp.message"));
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
@@ -29,7 +29,7 @@ const Dados: React.FC = () => {
               width={32}
               height={32}
               alt={`${t("contact.contact.text", parentStyles)}`}
-            /></a>+55 (81) 9 7901-2599
+            /></a>{t("contact.contact.number", parentStyles)}
         </div>
       </div>
       <div className={styles.block}>

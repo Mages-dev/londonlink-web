@@ -19,29 +19,36 @@ const Navigation: React.FC<MenuProps> = ({
   const { sections, titles } = useSections();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { setForceSection } = useForceSection();
+  const { setPreloadUntil } = useForceSection();
 
-  // Função de scroll melhorada
   const scrollToSection = (sectionId: string) => {
-    setForceSection(sectionId); // força carregamento da section
+    setPreloadUntil(sectionId); // força o carregamento até a section clicada
 
-    // tenta scrollar quando a section já existir no DOM
-    const tryScroll = () => {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        const headerOffset = 100;
-        const offsetPosition = element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    requestAnimationFrame(() => {
+      const checkReady = () => {
+        const index = sections.indexOf(sectionId);
+        const allLoaded = sections
+          .slice(0, index + 1)
+          .every((sec) => document.getElementById(sec));
 
-        window.scrollTo({ top: offsetPosition, behavior: "smooth" });
-        setActiveSection(sectionId);
-        setIsOpen(false);
-        setForceSection(null); // limpa flag após scroll
-      } else {
-        requestAnimationFrame(tryScroll);
-      }
-    };
+        if (allLoaded) {
+          const element = document.getElementById(sectionId);
+          if (element) {
+            const headerOffset = 100;
+            const offsetPosition =
+              element.getBoundingClientRect().top + window.pageYOffset - headerOffset;
 
-    requestAnimationFrame(tryScroll);
+            window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+          }
+          setPreloadUntil(null);
+          setActiveSection(sectionId);
+          setIsOpen(false);
+        } else {
+          requestAnimationFrame(checkReady);
+        }
+      };
+      checkReady();
+    });
   };
 
   // Função de verificação de seção ativa
