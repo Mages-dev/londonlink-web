@@ -12,8 +12,8 @@ const Dados: React.FC = () => {
     window.open(whatsappUrl, "_blank", "noopener,noreferrer");
   };
   return (
-    <div className={styles.component}>
-      <div className={styles.block}>
+    <div className={`painelContatosDados ${styles.component}`}>
+      <div className={`${styles.block}`}>
         <div className={parentStyles.bold}>{t("contact.address.title", parentStyles)}</div>
         <div>{t("contact.address.text", parentStyles)}</div>
       </div>
