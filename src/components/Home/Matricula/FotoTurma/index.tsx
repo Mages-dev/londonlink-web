@@ -3,10 +3,10 @@ import Image from "next/image"
 
 const FotoTurma: React.FC = () => {
 	return (
-    <div className={`${styles.container}`}>
-      <div className={`${styles.gradient}`}></div>
+    <div className={`fotoTurmaContainer ${styles.container}`}>
+      <div className={`gradient-topdown`}></div>
       <Image
-        className={`${styles.foto}`}
+        className={`fotoTurmaImagem ${styles.foto}`}
         src={"/img/home-11.png"}
         width={600}
         height={520}

@@ -44,8 +44,8 @@ const SmallCard: React.FC<SmallCardProps> = ({ title = "No title", icon = "error
   }, []);
 
   return (
-    <div className={styles.card}>
-      <div className={styles.iconFrame}>
+    <div className={`cardPequeno ${styles.card}`}>
+      <div className={`iconeCardPequeno ${styles.iconFrame}`}>
         <object
           ref={objectRef}
           type="image/svg+xml"
@@ -58,8 +58,8 @@ const SmallCard: React.FC<SmallCardProps> = ({ title = "No title", icon = "error
           }}
         />
       </div>
-      <h3 className={styles.cardTitle}>{title}</h3>
-      <p className={styles.cardContent}>{children}</p>
+      <h3 className={`tituloCardPequeno ${styles.cardTitle}`}>{title}</h3>
+      <p className={`textoCardPequeno ${styles.cardContent}`}>{children}</p>
     </div>
   );
 };

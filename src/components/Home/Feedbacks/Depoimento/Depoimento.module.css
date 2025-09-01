@@ -1,8 +1,8 @@
 .depoimentoCard {
   display: grid;
   grid-template-columns: auto 1fr; /* Alinhar imagem e conteúdo lado a lado */
-  gap: 20px; /* Espaço entre imagem e texto */
   align-items: center;
+  gap: 20px; /* Espaço entre imagem e texto */
   border-radius: 12px;
   padding: 20px;
   transition: transform 0.3s ease;

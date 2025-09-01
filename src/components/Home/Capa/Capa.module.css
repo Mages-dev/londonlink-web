@@ -10,22 +10,12 @@
   z-index: 2000;
 }
 
-.paragrafo {
-  margin-top: 25px;
-  line-height: 2cap;
-  font-size: 2cap;
-}
-
-.h1 {
-  font-size: 4cap;
-}
-
-.shadow {
-  text-shadow: 3px 3px 4px var(--shadow-color);
-}
-
 .buttonContainer {
   width: 30%;
   margin-top: 20px;
   margin-left: 10%;
+}
+
+.tituloSubtitulo {
+  margin-top: 20px;
 }

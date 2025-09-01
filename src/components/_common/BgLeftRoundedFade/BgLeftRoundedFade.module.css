@@ -4,23 +4,3 @@
   min-height: 200px;
   margin: 0 auto;
 }
-
-.gradient {
-  width: calc(100% - 3rem);
-  min-height: 100%;
-  border-top-right-radius: 150px;
-  background:
-    linear-gradient(
-      270deg,
-      color-mix(in srgb, var(--gradient-circle-bg) 100%, transparent) 20%, 
-      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
-      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-size: 2cap;
-  padding: 2cap;
-}
-
-@media (max-width: 768px) {
-
-}

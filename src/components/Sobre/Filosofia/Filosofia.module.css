@@ -1,32 +1,24 @@
-/* Configuração do componente */
 .component {
   display: flex;
-  flex-direction: column; /* Posiciona os componentes verticalmente */
+  flex-direction: column;
   width: 100%;
   max-width: 1400px;
-  position: relative; /* Garante que elementos absolutos sejam posicionados em relação ao pai */
+  position: relative;
   margin: 0 auto;
   height: 70vh;
   margin-bottom: 5vh;
 }
 
-.component div {
+.component > div {
   height: 100%;
-  font-size: 1.55cap;
-  line-height: 1.4cap;
 }
 
 .titulo {
   position: absolute;
-  top: 20px !important;
-  width: 45% !important;
-  font-size: 3.5cap !important;
+  top: 20px;
+  width: 45%;
+  font-size: 3.5cap;
   color: var(--text);
-  text-shadow: 
-  -1px -1px 1px var(--text-contour),  
-  1px -1px 1px var(--text-contour),
-  -1px  1px 1px var(--text-contour),
-  1px  1px 1px var(--text-contour);
 }
 
 .texto {
@@ -34,14 +26,9 @@
   top: 40px;
   width: 50%;
   right: 10%;
-  font-size: 1.55cap !important;
-  line-height: 1.6cap !important;
+  font-size: 1.55cap;
+  line-height: 1.6cap;
   color: var(--text);
-  text-shadow: 
-  -1px -1px 1px var(--text-contour),  
-  1px -1px 1px var(--text-contour),
-  -1px  1px 1px var(--text-contour),
-  1px  1px 1px var(--text-contour);
 }
 
 .containerImagem {
@@ -56,7 +43,7 @@
   position: absolute;
   border: 3px solid var(--about-image-borders-color);
   width: 400px;
-  height: 300px !important;
+  height: 300px;
   top: 30%;
   left: 5%;
   border-radius: 20px;

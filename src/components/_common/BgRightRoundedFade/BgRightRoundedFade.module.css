@@ -4,33 +4,3 @@
   min-height: 200px;
   margin: 0 auto;
 }
-
-.gradient {
-  width: calc(100% - 3rem);
-  min-height: 100%;
-  position: relative;
-  border-top-left-radius: 150px;
-  font-size: 2cap;
-  padding: 2cap;
-  z-index: 1;
-}
-
-.gradient::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 200px;
-  width: calc(100% - 200px);
-  height: 100%;
-  border-top-left-radius: 150px;
-  background: linear-gradient(
-    90deg,
-    color-mix(in srgb, var(--gradient-circle-bg) 100%, transparent) 20%, 
-    color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
-    color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
-  z-index: -1; /* Coloca o fundo atrás do conteúdo */
-}
-
-@media (max-width: 768px) {
-
-}

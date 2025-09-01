@@ -11,15 +11,10 @@
 
 .titulo {
   position: absolute;
-  top: 20px !important;
-  width: 100% !important;
-  font-size: 2cap !important;
+  top: 20px;
+  width: 100%;
+  font-size: 2cap;
   color: var(--text);
-  text-shadow: 
-  -1px -1px 1px var(--text-contour),  
-  1px -1px 1px var(--text-contour),
-  -1px  1px 1px var(--text-contour),
-  1px  1px 1px var(--text-contour);
 }
 
 .cardsContainer {

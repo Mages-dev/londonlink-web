@@ -11,6 +11,22 @@ export interface SectionComponentProps {
   id: string;
 }
 
+export interface CardVantagens {
+	icone: string;
+	titulo: string;
+	texto: React.ReactNode
+}
+
+export interface CardNecessidades {
+	icone: string;
+	texto: React.ReactNode
+}
+
+export interface CardObjetivos {
+	imagem: string;
+	rotulo: string;
+}
+
 export interface LayoutProps {
   children: ReactNode;
 }

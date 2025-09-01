@@ -18,16 +18,11 @@
 
 .titulo {
   position: absolute;
-  top: 20px !important;
-  width: 700px !important;
-  font-size: 3cap !important;
-  line-height: 1.8cap !important;
+  top: 20px;
+  width: 700px;
+  font-size: 3cap;
+  line-height: 1.8cap;
   color: var(--text);
-  text-shadow: 
-  -1px -1px 1px var(--text-contour),  
-  1px -1px 1px var(--text-contour),
-  -1px  1px 1px var(--text-contour),
-  1px  1px 1px var(--text-contour);
 }
 
 .texto {
@@ -35,14 +30,9 @@
   top: 30%;
   width: 40%;
   right: 5%;
-  font-size: 1.55cap !important;
-  line-height: 1.8cap !important;
+  font-size: 1.55cap;
+  line-height: 1.8cap;
   color: var(--text);
-  text-shadow: 
-  -1px -1px 1px var(--text-contour),  
-  1px -1px 1px var(--text-contour),
-  -1px  1px 1px var(--text-contour),
-  1px  1px 1px var(--text-contour); 
 }
 
 .buttonContainer {
@@ -70,7 +60,7 @@
   position: absolute;
   border: 3px solid var(--about-image-borders-color);
   width: 340px;
-  height: 530px !important;
+  height: 530px;
   top: 30%;
   left: 15%;
   border-radius: 20px;

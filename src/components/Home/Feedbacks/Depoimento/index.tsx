@@ -9,13 +9,13 @@ const Depoimento: React.FC<DepoimentoProps> = ({
 }) => {
   return (
     
-    <div className={`${styles.depoimentoCard}`}>
-      <div className={styles.depoimentoImage}>
+    <div className={`cardDepoimentoContainer ${styles.depoimentoCard}`}>
+      <div className={`cardDepoimentoImagem ${styles.depoimentoImage}`}>
         <ImageWithPartialFrame src={image} />
       </div>
-      <div className={styles.content}>
-        <div className={`${styles.title}`}>{title}</div>
-        <div className={`${styles.texto}`}>{children}</div>
+      <div className={`cardDepoimentoTextoContainer ${styles.content}`}>
+        <div className={`cardDepoimentoTitulo ${styles.title}`}>{title}</div>
+        <div className={`cardDepoimentoTexto ${styles.texto}`}>{children}</div>
       </div>
     </div>
 	)

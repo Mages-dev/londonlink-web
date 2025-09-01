@@ -6,14 +6,14 @@ import { useLanguage } from "@/context"
 const Intro: React.FC = () => {
 	const { t } = useLanguage();
 	return (
-		<div className={styles.component}>
-			<div className={`${styles.gradientA}`}></div>
-			<div className={`${styles.gradientB}`}></div>
-			<div className={`${styles.titulo}`}>{t("books.title", parentStyles)}</div>
-			<div className={`${styles.containerImagem}`}>
-				<div className={`${styles.frame}`}></div>
+		<div className={`painelLivrosIntro ${styles.component}`}>
+			<div className={`gradient-esferaGrande`}></div>
+			<div className={`gradient-esferaPequena`}></div>
+			<div className={`tituloPrincipal ${styles.titulo}`}>{t("books.title", parentStyles)}</div>
+			<div className={`painelLivrosIntroContainerImagem ${styles.containerImagem}`}>
+				<div className={`painelLivrosIntroImagemFrame ${styles.frame}`}></div>
 				<Image
-					className={`${styles.imagem}`}
+					className={`painelLivrosIntroImagem ${styles.imagem}`}
 					src="/img/books-1.jpg"
 					width={600}
 					height={345}

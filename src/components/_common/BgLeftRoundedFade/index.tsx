@@ -8,7 +8,7 @@ const BgLeftRoundedFade: React.FC<RoundedFadeProps> = ({ top = 0, children }) =>
       style={{
         '--top': top,
       } as React.CSSProperties}>
-      <div className={`${styles.gradient}`}>
+      <div className={`gradient-left`}>
         {children}
       </div>
     </div>

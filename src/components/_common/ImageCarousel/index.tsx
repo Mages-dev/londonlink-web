@@ -95,7 +95,7 @@ export default function GalleryCarousel() {
 
   return (
     <div
-      className={styles.carouselWrapper}
+      className={`painelGaleriaCarrosselWrapper ${styles.carouselWrapper}`}
       ref={containerRef}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}

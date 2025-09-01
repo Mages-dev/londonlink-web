@@ -6,12 +6,12 @@ import { useLanguage } from "@/context";
 const Matricula: React.FC = () => {
   const { t } = useLanguage();
 	return (
-    <div className={`${styles.container}`}>
-      <div className={`${styles.titulo} ${parentStyles.bold}`}>{t("home.registration.title")}</div>
-      <div className={styles.buttonContainer}>
+    <div className={`painelMatriculaContainer ${styles.container}`}>
+      <div className={`tituloPrincipal bordaTexto ${styles.titulo} ${parentStyles.bold}`}>{t("home.registration.title")}</div>
+      <div className={`${styles.buttonContainer}`}>
         <Button caption={String(t("home.registration.preregistration"))} />
       </div>
-      <div className={styles.subtexto}>{t("home.registration.subtext")}</div>
+      <div className={`subtituloPrincipal bordaTexto ${styles.subtexto}`}>{t("home.registration.subtext")}</div>
       <FotoTurma />
     </div>
 	)

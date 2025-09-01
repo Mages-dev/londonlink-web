@@ -7,14 +7,14 @@ import { useLanguage } from "@/context"
 const Historia: React.FC = () => {
 	const { t } = useLanguage();
 	return (
-		<div className={styles.component}>
+		<div className={`painelHistoria ${styles.component}`}>
 			<BgRightRoundedFade top={320}>
-				<div className={`${styles.titulo}`}>{t("about.history.title", parentStyles)}</div>
-				<div className={`${styles.texto}`}>{t("about.history.text", parentStyles)}</div>
-				<div className={`${styles.containerImagem}`}>
-					<div className={`${styles.frame}`}></div>
+				<div className={`tituloPrincipal bordaTexto ${styles.titulo}`}>{t("about.history.title", parentStyles)}</div>
+				<div className={`painelHistoriaTexto bordaTexto ${styles.texto}`}>{t("about.history.text", parentStyles)}</div>
+				<div className={`painelHistoriaContainerImagem ${styles.containerImagem}`}>
+					<div className={`painelHistoriaImagemFrame ${styles.frame}`}></div>
 					<Image
-						className={`${styles.imagem}`}
+						className={`painelHistoriaImagem ${styles.imagem}`}
 						src="/img/about-3.jpg"
 						width={600}
 						height={450}

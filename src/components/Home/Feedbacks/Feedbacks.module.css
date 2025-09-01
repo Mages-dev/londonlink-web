@@ -3,36 +3,18 @@
   grid-template-columns: repeat(2, 1fr); /* 2 colunas */
   gap: 20px; /* Espaçamento entre cards */
   padding: 20px;
-  font-size: clamp(14px, 3vw, 35px);
 }
 
 .depoimentosTitulo {
   color: var(--home-testimonial-title-color);
-  text-shadow: 
-  -1px -1px 1px var(--text-contour),  
-  1px -1px 1px var(--text-contour),
-  -1px  1px 1px var(--text-contour),
-  1px  1px 1px var(--text-contour);
 }
 
 .depoimentosSubtexto {
   color: var(--home-testimonial-subtitle-color);
-  text-shadow: 
-  -1px -1px 1px var(--text-contour),  
-  1px -1px 1px var(--text-contour),
-  -1px  1px 1px var(--text-contour),
-  1px  1px 1px var(--text-contour);}
+}
 
 .depoimentosGrid {
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 colunas */
-  gap: 20px; /* Espaçamento entre cards */
-  padding: 20px;
-}
-
-@media (max-width: 768px) {
-  .depoimentosGrid {
-    grid-template-columns: 1fr; /* 1 coluna em dispositivos menores */
-  }
 }

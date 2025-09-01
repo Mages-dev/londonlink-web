@@ -7,13 +7,13 @@ import { useLanguage } from "@/context"
 const Bloco1: React.FC = () => {
 	const { t } = useLanguage();
 	return (
-		<div className={styles.component}>
+		<div className={`painelLivrosBloco1 ${styles.component}`}>
 			<BgLeftRoundedFade top={320}>
-				<div className={`${styles.texto}`}>{t("books.block1", parentStyles)}</div>
-				<div className={`${styles.containerImagem}`}>
-					<div className={`${styles.frame}`}></div>
+				<div className={`painelLivrosBloco1Texto bordaTexto ${styles.texto}`}>{t("books.block1", parentStyles)}</div>
+				<div className={`painelLivrosBloco1ContainerImagem ${styles.containerImagem}`}>
+					<div className={`painelLivrosBloco1ImagemFrame ${styles.frame}`}></div>
 					<Image
-						className={`${styles.imagem}`}
+						className={`painelLivrosBloco1Imagem ${styles.imagem}`}
 						src="/img/books-2.jpg"
 						width={500}
 						height={450}

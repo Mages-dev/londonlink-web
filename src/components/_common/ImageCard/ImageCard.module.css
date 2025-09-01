@@ -1,7 +1,6 @@
 .card {
   position: relative;
   background-color: var(--home-card-bg-color);
-  border-radius: 12px;
   box-shadow: 0 4px 12px var(--shadow-color);
   word-wrap: break-word;
   overflow-wrap: break-word;

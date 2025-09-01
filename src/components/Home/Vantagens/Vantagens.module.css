@@ -14,6 +14,10 @@
   padding: 1rem 0;
 }
 
+.tituloContainer {
+  display: block;
+}
+
 .cardsContainer::-webkit-scrollbar {
   display: none;
 }

@@ -7,13 +7,13 @@ const Intro: React.FC = () => {
 	const { t } = useLanguage();
 	return (
 		<div className={styles.component}>
-			<div className={`${styles.gradientA}`}></div>
-			<div className={`${styles.gradientB}`}></div>
-			<div className={`${styles.titulo}`}>{t("about.intro.title", parentStyles)}</div>
-			<div className={`${styles.containerImagem}`}>
-				<div className={`${styles.frame}`}></div>
+			<div className={`gradient-esferaGrande`}></div>
+			<div className={`gradient-esferaPequena`}></div>
+			<div className={`tituloPrincipal ${styles.titulo}`}>{t("about.intro.title", parentStyles)}</div>
+			<div className={`painelSobreContainerImagem ${styles.containerImagem}`}>
+				<div className={`painelSobreImagemFrame ${styles.frame}`}></div>
 				<Image
-					className={`${styles.imagem}`}
+					className={`painelSobreImagem ${styles.imagem}`}
 					src="/img/about-1.jpg"
 					width={600}
 					height={600}

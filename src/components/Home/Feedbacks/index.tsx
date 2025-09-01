@@ -44,15 +44,15 @@ const Feedbacks: React.FC = () => {
   return (
     <div>
       <BgLeftRoundedFade top={600}>
-        <div className={styles.depoimentosTituloGrid}>
-          <div className={styles.depoimentosTitulo}>
+        <div className={`painelFeedbackTituloGrid ${styles.depoimentosTituloGrid}`}>
+          <div className={`tituloComponente sombreado ${styles.depoimentosTitulo}`}>
             {t("home.feedback.title", parentStyles)}
           </div>
-          <div className={styles.depoimentosSubtexto}>
+          <div className={`subtituloComponente sombreado ${styles.depoimentosSubtexto}`}>
             {t("home.feedback.subtext", parentStyles)}
           </div>
         </div>
-        <div className={styles.depoimentosGrid}>
+        <div className={`painelFeedbackGridDepoimentos ${styles.depoimentosGrid}`}>
           {cards.map((dep, index) => (
             <Depoimento key={index} image={dep.img} title={dep.title}>
               {dep.text}

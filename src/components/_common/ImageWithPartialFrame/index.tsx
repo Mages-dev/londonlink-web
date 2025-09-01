@@ -7,9 +7,9 @@ const ImageWithPartialFrame: React.FC<ImgProps> = ({
 }) => {
 
   return (
-    <div className={`${styles.container}`}>
+    <div className={`imagemComFrameParcialContainer ${styles.container}`}>
       <Image
-        className={`${styles.picture}`}
+        className={`imagemComFrameParcialImagem ${styles.picture}`}
         src={src}
         width={400}
         height={600}

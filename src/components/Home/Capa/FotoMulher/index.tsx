@@ -4,7 +4,7 @@ import styles from "./FotoMulher.module.css"
 
 const FotoMulher: React.FC<BgCircleProps> = ({ x = "0", y = "0", radius = "290"}) => {
 	return (
-    <div className={`${styles.principalContainer}`}>
+    <div className={`fotoMulherContainer ${styles.principalContainer}`}>
       <div
         className={`${styles.principal}`}
         style={{
@@ -14,7 +14,7 @@ const FotoMulher: React.FC<BgCircleProps> = ({ x = "0", y = "0", radius = "290"}
         } as React.CSSProperties}
       >
         <BgGradientCircle radius={radius} />
-        <div className={`${styles.fotoPrincipal}`}></div>
+        <div className={`fotoMulher ${styles.fotoPrincipal}`}></div>
       </div>
     </div>
 	)

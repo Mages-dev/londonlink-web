@@ -3,14 +3,14 @@ import { ImageCardProps } from '@/interfaces'
 
 const ImageCard: React.FC<ImageCardProps> = ({ caption = "No title", image = "error" }) => {
   return (
-    <div className={styles.card}>
+    <div className={`imageCard ${styles.card}`}>
       <div
-        className={styles.image}
+        className={`imagemImageCard ${styles.image}`}
         style={{
           backgroundImage: `url(${image})`,
         } as React.CSSProperties}
       />
-      <div className={styles.caption}>{caption}</div>
+      <div className={`textoImageCard ${styles.caption}`}>{caption}</div>
     </div>
   );
 };
