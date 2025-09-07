@@ -16,6 +16,64 @@
   margin-left: 10%;
 }
 
-.tituloSubtitulo {
-  margin-top: 20px;
+@media screen and (width <= 1540) and (width > 1440) {
+
+}
+
+@media screen and (width <= 1440) and (width > 1366) {
+
+}
+
+@media screen and (width <= 1366) and (width > 1280) {
+
+}
+
+@media screen and (width <= 1280) and (width > 800) {
+
+}
+
+@media screen and (width <= 800) and (width > 500) {
+
+}
+
+@media screen and (width <= 500) and (width > 400) {
+  .component {
+    height: 700px;
+  }
+
+  .textBlock {
+    width: 90%;
+    margin-top: calc(50px * .35);
+    margin-left: 0;
+    line-height: 2.5cap;
+    z-index: 2000;
+  }
+
+  .buttonContainer {
+    position: absolute;
+    width: 35%;
+    top: 0;
+    right: 0;
+  }
+}
+
+@media screen and (width <= 400) {
+  .component {
+    height: 700px;
+  }
+
+  .textBlock {
+    width: 90%;
+    margin-top: calc(50px * .35);
+    margin-left: 0;
+    line-height: 2.5cap;
+    z-index: 2000;
+  }
+
+  .buttonContainer {
+    border: 1px solid red;
+    width: 150px;
+    margin-left: 100px;
+    margin-top: 15px;
+  }
 }

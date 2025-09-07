@@ -283,17 +283,17 @@ section > div {
 }
 
 /* Overrides para áreas da página */
-/* ------------------------------- HOME ------------------------------- */
+/* ------------------------------- HOME/VANTAGENS ------------------------------- */
 .painelVantagem .tituloComponente {
   display: block !important;
 }
 .painelVantagem .tituloComponente span {
   line-height: 1.7cap !important;
 }
-
 .painelVantagemCardsContainer {
   
 }
+/* ------------------------------- HOME/FEEDBACKS ------------------------------- */
 .painelFeedbackTituloGrid{
   
 }
@@ -349,7 +349,7 @@ section > div {
   left: 15% !important;
   border-radius: 20px !important;
 }
-
+/* ------------------------------ FILOSOFIA ------------------------------- */
 .painelFilosofia .tituloPrincipal {
   font-size: 3.5cap !important;
   line-height: 1.4cap !important;
@@ -384,20 +384,15 @@ section > div {
   left: 0 !important;
   border-radius: 20px !important;
 }
-
-
-
-
+/* ------------------------------ HISTORIA ------------------------------- */
 .painelHistoria .tituloPrincipal {
   font-size: 3.5cap !important;
   line-height: 1.4cap !important;
 }
-
 .painelHistoria div {
   font-size: 1.55cap !important;
   line-height: 1.4cap !important;
 }
-
 .painelHistoria .painelHistoriaTexto{
   top: 40px !important;
   width: 50% !important;
@@ -428,13 +423,12 @@ section > div {
   left: 0 !important;
   border-radius: 20px !important;
 }
-
+/* ------------------------------ NECESSIDADES ------------------------------- */
 .painelNecessidadesTitulo {
   top: 20px !important;
   width: 100% !important;
   font-size: 2cap !important;
 }
-
 .painelNecessidadesCardsContainer {
   gap: 1rem !important;
   width: 100% !important;
@@ -445,8 +439,7 @@ section > div {
   min-width: 150px !important;
   max-width: 195px !important;
 }
-
-
+/* ------------------------------ METAS ------------------------------- */
 .painelMetas {
   margin: 0 auto !important;
   height: 85vh !important;
@@ -483,6 +476,7 @@ section > div {
   left: 0 !important;
   border-radius: 20px !important;
 }
+/* ------------------------------ LIVROS ------------------------------- */
 
 .painelLivrosIntro {
   height: 100vh !important;
@@ -1424,7 +1418,6 @@ section > div {
 }
 
 
-
 @media screen and (width <= 1366) and (width > 1280) {
   .tituloComponente {
     line-height: 1.7cap !important;
@@ -2094,7 +2087,7 @@ section > div {
   }
   .painelLivrosBloco2 {
     width: 100% !important;
-    height: 700px !important;
+    height: 650px !important;
     margin-bottom: 10vh !important;
   }
   .painelLivrosBloco2 div {

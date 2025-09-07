@@ -39,6 +39,62 @@
   pointer-events: none;
 }
 
-@media (max-width: 768px) {
+@media screen and (width <= 1540) and (width > 1440) {
 
+}
+
+@media screen and (width <= 1440) and (width > 1366) {
+
+}
+
+@media screen and (width <= 1366) and (width > 1280) {
+
+}
+
+@media screen and (width <= 1280) and (width > 800) {
+
+}
+
+@media screen and (width <= 800) and (width > 500) {
+
+}
+
+@media screen and (width <= 500) {
+  .principalContainer {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: calc(100% - 2rem);
+    height: 99dvh;
+
+    transform: translateX(-50%);
+    max-width: 500px;
+    z-index: 0;
+    
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .principal {
+    justify-content: space-between;
+    
+    top: 200px;
+    left: 10px;
+    width: calc(var(--radius) * 2 * 1px);
+    height: calc(var(--radius) * 2 * 1px);
+
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .fotoPrincipal {
+    width: 350px;
+    height: 555px;
+    margin-left: 0;
+    background-image: url("/img/home-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: path('M0,570 C200,520,390,560,500,580 C413,0,400,0,210,0 C0,0,0,300,0,600 Z');
+    pointer-events: none;
+  }
 }

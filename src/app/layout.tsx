@@ -34,9 +34,9 @@ export const metadata: Metadata = {
     images: [
       {
         url: 'https://londonlink.com.br/logo.png',
-        width: 800,
-        height: 600,
-        alt: 'Logo da London Link',
+        width: 400,
+        height: 400,
+        alt: 'London Link',
       },
     ],
     locale: 'pt_BR',

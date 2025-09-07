@@ -1,13 +1,54 @@
-/* Configuração do componente */
 .component {
+  position: relative;
   display: flex;
-  flex-direction: column; /* Posiciona os componentes verticalmente */
-  width: 100%; /* Garante que o componente ocupe toda a largura */
-  position: relative; /* Garante que elementos absolutos sejam posicionados em relação ao pai */
-  min-height: 100vh; /* Garante que o componente tenha altura mínima baseada no viewport */
+  flex-direction: column;
+  width: 100%;
+  min-height: 100vh;
 }
 
 .bold {
   font-family: 'Open Sans', sans-serif;
   font-weight: bolder;
+}
+
+.titulo {
+  font-size: 4cap !important;
+}
+
+.subtitulo {
+  margin-top: 20px;
+  line-height: 2cap !important;
+  font-size: 2cap !important;
+}
+
+@media screen and (width <= 1540) and (width > 1440) {
+
+}
+
+@media screen and (width <= 1440) and (width > 1366) {
+
+}
+
+@media screen and (width <= 1366) and (width > 1280) {
+
+}
+
+@media screen and (width <= 1280) and (width > 800) {
+
+}
+
+@media screen and (width <= 800) and (width > 500) {
+
+}
+
+@media screen and (width <= 500) {
+  .titulo {
+    font-size: 2cap !important;
+  }
+
+  .subtitulo {
+    margin-top: 10px;
+    line-height: 1.8cap !important;
+    font-size: 1.5cap !important;
+  }
 }
