@@ -15,6 +15,7 @@ const Navigation: React.FC<MenuProps> = ({
 }) => {
   const { t } = useLanguage();
   const objectRef = useRef<HTMLObjectElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null); // 🔹 ref para o container
   const [activeSection, setActiveSection] = useState(initialActiveSection);
   const { sections, titles } = useSections();
   const [isOpen, setIsOpen] = useState(false);
@@ -27,6 +28,25 @@ const Navigation: React.FC<MenuProps> = ({
     setDrawerOpen(prevState => !prevState);
     console.log(drawerOpen);
   };
+
+  // 🔹 Fecha o menu se clicar fora
+  useEffect(() => {
+    
+    if (window.innerWidth > 768) return; // só aplica no mobile
+    
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current && 
+        !menuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        setDrawerOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   const updateSvgColors = () => {
     try {
@@ -114,7 +134,9 @@ const Navigation: React.FC<MenuProps> = ({
   }, [activeSection, sections]);
 
   return (
-    <div className={`${styles.menucontainer} ${drawerOpen ? styles.expanded : ""} ${scrolled ? styles.scrolled : ""}`}>
+    <div
+      ref={menuRef}
+      className={`${styles.menucontainer} ${drawerOpen ? styles.expanded : ""} ${scrolled ? styles.scrolled : ""}`}>
       <Logo />
       <div className={styles.navWrapper}>
         <nav className={`${styles.menubar} ${isOpen ? styles.expanded : ""} ${scrolled ? styles.scrolled : ""}`}>
