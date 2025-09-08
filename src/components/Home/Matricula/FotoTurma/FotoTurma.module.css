@@ -9,3 +9,29 @@
   margin: 0 auto;
   top: -600px;
 }
+
+@media screen and (width <= 500) {
+  .container {
+    min-width: 100%;
+    max-width: 500px;
+    height: 500px;
+  }
+  .foto {
+    position: relative;
+    margin: 0 auto;
+    top: 50px;
+  }
+}
+
+@media screen and (width <= 400) {
+  .container {
+    min-width: 100%;
+    max-width: 400px;
+    height: 400px;
+  }
+  .foto {
+    position: relative;
+    margin: 0 auto;
+    top: 50px;
+  }
+}

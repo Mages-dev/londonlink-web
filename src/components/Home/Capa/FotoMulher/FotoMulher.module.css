@@ -39,6 +39,27 @@
   pointer-events: none;
 }
 
+/*
+450x713:
+clip-path: path('M0,570 C200,520,390,560,500,580 C413,0,400,0,210,0 C0,0,0,300,0,600 Z');
+
+400x634:
+clip-path: path('M0,506.8 C177.8,462.4 346.7,498.0 444.4,515.7 C367.1,0 355.6,0 186.7,0 C0,0 0,266.8 0,533.5 Z');
+
+350x555:
+clip-path: path('M0,443.7 C155.6,404.8 303.3,435.9 388.9,451.5 C321.1,0 311.1,0 163.3,0 C0,0 0,233.5 0,467.0 Z');
+
+300x475:
+clip-path: path('M0,379.7 C133.3,346.4 260.0,373.1 333.3,386.4 C275.3,0 266.7,0 140.0,0 C0,0 0,199.9 0,399.7 Z');
+
+250x396:
+clip-path: path('M0,316.6 C111.1,288.8 216.7,311.0 277.8,322.1 C229.4,0 222.2,0 116.7,0 C0,0 0,166.6 0,333.2 Z');
+
+200x317:
+clip-path: path('M0,253.4 C88.9,231.2 173.3,249.0 222.2,257.9 C183.6,0 177.8,0 93.3,0 C0,0 0,133.4 0,266.8 Z');
+
+*/
+
 @media screen and (width <= 1540) and (width > 1440) {
 
 }
@@ -56,10 +77,6 @@
 }
 
 @media screen and (width <= 800) and (width > 500) {
-
-}
-
-@media screen and (width <= 500) {
   .principalContainer {
     position: absolute;
     top: 0;
@@ -78,8 +95,47 @@
   .principal {
     justify-content: space-between;
     
-    top: 200px;
-    left: 10px;
+    top: 100px;
+    left: 5px;
+    width: 200px;
+    height: 200px;
+
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .fotoPrincipal {
+    width: 350px;
+    height: 555px;
+    margin-left: 0;
+    background-image: url("/img/home-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: path('M0,443.7 C155.6,404.8 303.3,435.9 388.9,451.5 C321.1,0 311.1,0 163.3,0 C0,0 0,233.5 0,467.0 Z');
+    pointer-events: none;
+  }
+}
+
+@media screen and (width <= 500) and (width > 400) {
+  .principalContainer {
+    top: -35px;
+    left: 50%;
+    width: calc(100% - 2rem);
+    height: 99dvh;
+
+    transform: translateX(-50%);
+    max-width: 500px;
+    z-index: 0;
+    
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .principal {
+    justify-content: space-between;
+    
+    top: calc(var(--y) + 0 * 1px);
+    left: calc(var(--x) + 0 * 1px);
     width: calc(var(--radius) * 2 * 1px);
     height: calc(var(--radius) * 2 * 1px);
 
@@ -94,7 +150,46 @@
     background-image: url("/img/home-1.png");
     background-repeat: no-repeat;
     background-size: cover;
-    clip-path: path('M0,570 C200,520,390,560,500,580 C413,0,400,0,210,0 C0,0,0,300,0,600 Z');
+    clip-path: path('M0,443.7 C155.6,404.8 303.3,435.9 388.9,451.5 C321.1,0 311.1,0 163.3,0 C0,0 0,233.5 0,467.0 Z');
+    pointer-events: none;
+  }
+}
+
+@media screen and (width <= 400) {
+  .principalContainer {
+    top: 0;
+    left: 50%;
+    width: calc(100% - 2rem);
+    height: 99dvh;
+
+    transform: translateX(-50%);
+    max-width: 500px;
+    z-index: 0;
+    
+    transition: all 0.3s ease;
+    pointer-events: none;
+  }
+
+  .principal {
+    justify-content: space-between;
+    
+    top: calc(var(--y) + 0 * 1px);
+    left: calc(var(--x) + 0 * 1px);
+    width: calc(var(--radius) * 2 * 1px);
+    height: calc(var(--radius) * 2 * 1px);
+
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .fotoPrincipal {
+    width: 300px;
+    height: 475px;
+    margin-left: 0;
+    background-image: url("/img/home-1.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: path('M0,379.7 C133.3,346.4 260.0,373.1 333.3,386.4 C275.3,0 266.7,0 140.0,0 C0,0 0,199.9 0,399.7 Z');
     pointer-events: none;
   }
 }

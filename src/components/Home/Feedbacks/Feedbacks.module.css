@@ -17,4 +17,32 @@
   position: relative;
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 colunas */
+  gap: 20px;
+}
+
+/* Para telas entre 400px e 500px */
+@media screen and (width <= 500px) and (width > 400px) {
+  .depoimentosTituloGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .depoimentosGrid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+
+/* Para telas até 400px */
+@media screen and (width <= 400px) {
+  .depoimentosTituloGrid {
+    grid-template-columns: 1fr;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .depoimentosGrid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }

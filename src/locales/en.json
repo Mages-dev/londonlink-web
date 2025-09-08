@@ -1,6 +1,9 @@
 {
   "loading": "Loading",
   "whatsapp.message": "Hello, I'd like information about preregistration at London Link!",
+  "whatsapp.number": "5581996444501",
+  "languageswitcher.label": "Language: ",
+  "themeswitcher.label": "Theme: ",
   "menu.home": "Home",
   "menu.about": "About",
   "menu.books": "Books",

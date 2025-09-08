@@ -55,9 +55,22 @@
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (width <= 500) {
   .card {
     min-width: 100%; /* 1 card por linha */
     max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .cardTitle {
+    position: absolute;
+    top: 0;
+    left: 75px;
+    height: 65px;
+    width: calc(100% - 80px);
+    overflow-wrap: break-word;
+    color: var(--home-card-title-font-color);
+    display: flex;
+    align-items: center;
   }
 }

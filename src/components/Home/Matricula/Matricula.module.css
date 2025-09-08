@@ -25,3 +25,14 @@
   margin-bottom: 5%;
   color: var(--text);
 }
+
+@media screen and (width <= 500) {
+  .buttonContainer {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (width <= 400) {
+
+}

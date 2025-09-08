@@ -4,8 +4,8 @@
   flex-direction: column; /* Posiciona os componentes verticalmente */
   width: calc(100% - 2rem);
   max-width: 1400px;
+  min-height: 900px;
   position: relative; /* Garante que elementos absolutos sejam posicionados em relação ao pai */
-  min-height: 100vh; /* Garante que o componente tenha altura mínima baseada no viewport */
   padding-top: 20vh;
 }
 

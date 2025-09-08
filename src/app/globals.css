@@ -12,6 +12,7 @@
   --text-inverted: #ffffff;
   --text-menubar: #444444;
   --text-menubar-button: #dddddd;
+  --options-icon-color: #ffffff;
   --logo-link-color: #191919;
   --shadow-color: #818181;
   --button-color: #969696;
@@ -52,6 +53,7 @@
   --text-inverted: #000000;
   --text-menubar: #dddddd;
   --text-menubar-button: #3f3f3f;
+  --options-icon-color: #ffffff;
   --logo-link-color: #f9fafb;
   --shadow-color: #cccccc;
   --button-color: #dddddd;
@@ -170,10 +172,6 @@ section > div {
   font-size: 2cap !important;
 }
 
-.fotoMulherContainer {}
-
-.fotoMulher {}
-
 .tituloComponente {
   line-height: 1.7cap !important;
   font-size: 2cap !important;
@@ -184,7 +182,6 @@ section > div {
   font-size: 1.5cap !important;
 }
 
-/* Overrides para card pequeno */
 .cardPequeno {
   min-width: 250px !important;
   max-width: 300px !important;
@@ -224,8 +221,6 @@ section > div {
   padding: 1rem 0 !important;
 }
 
-.painelObjetivosTituloContainer {}
-
 .painelObjetivosImageCardsContainer {
   gap: 1.5rem !important;
   padding: 1rem 0 !important;
@@ -234,27 +229,10 @@ section > div {
 }
 
 /* Overrides para card maior */
-.card {
-  
-}
-
-.iconeCard {
-  
-}
-
 .tituloCard {
   font-size: 1cap;
   font-weight: bold;
 }
-
-.textoCard {
-
-}
-
-.iconeCard {
-
-}
-
 /* Overrides para card com imagem */
 .imageCard {
   border-radius: 10px !important;
@@ -262,12 +240,10 @@ section > div {
   max-width: 200px !important;
   height: 100% !important;
 }
-
 .imagemImageCard {
   width: 200px !important;
   height: 200px !important;
 }
-
 .textoImageCard {
   font-size: 1.1rem !important;
 }
@@ -290,13 +266,7 @@ section > div {
 .painelVantagem .tituloComponente span {
   line-height: 1.7cap !important;
 }
-.painelVantagemCardsContainer {
-  
-}
 /* ------------------------------- HOME/FEEDBACKS ------------------------------- */
-.painelFeedbackTituloGrid{
-  
-}
 .painelFeedbackGridDepoimentos{
   gap: 20px; /* Espaçamento entre cards */
   padding: 20px;
@@ -307,7 +277,6 @@ section > div {
   border-radius: 12px !important;
   padding: 20px !important;
 }
-.cardDepoimentoImagem {}
 .cardDepoimentoTextoContainer {
   border-radius: 10px !important;
   padding: 10px !important;
@@ -477,7 +446,6 @@ section > div {
   border-radius: 20px !important;
 }
 /* ------------------------------ LIVROS ------------------------------- */
-
 .painelLivrosIntro {
   height: 100vh !important;
 }
@@ -501,7 +469,6 @@ section > div {
   left: 5% !important;
   border-radius: 20px !important;
 }
-
 .painelLivrosBloco1 {
   width: 100% !important;
   height: 60vh !important;
@@ -537,8 +504,6 @@ section > div {
   left: 10% !important;
   border-radius: 20px !important;
 }
-
-
 .painelLivrosBloco2 {
   width: 100% !important;
   height: 85vh !important;
@@ -580,11 +545,9 @@ section > div {
   min-height: 100vh !important;
   height: 100vh !important;
 }
-
 .painelGaleria .gradient-esferaPequena {
   top: -20px !important;
 }
-
 .painelGaleriaTitulo {
   width: 45% !important;
   top: 10% !important;
@@ -606,8 +569,7 @@ section > div {
   width: calc(100% - 3rem);
   min-height: 100%;
   border-top-right-radius: 150px;
-  background:
-  linear-gradient(
+  background: linear-gradient(
     270deg,
     color-mix(in srgb, var(--gradient-circle-bg) 100%, transparent) 20%, 
     color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
@@ -618,7 +580,6 @@ section > div {
   font-size: 2cap;
   padding: 2cap;
 }
-
 .gradient-right {
   width: calc(100% - 3rem);
   min-height: 100%;
@@ -628,7 +589,6 @@ section > div {
   padding: 2cap;
   z-index: 1;
 }
-
 .gradient-right::before {
   content: "";
   position: absolute;
@@ -645,12 +605,10 @@ section > div {
   );
   z-index: -1; /* Coloca o fundo atrás do conteúdo */
 }
-
 .gradient-topdown {
   width: 700px;
   height: 700px;
-  background:
-  linear-gradient(
+  background: linear-gradient(
     180deg,
     color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
     color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
@@ -661,37 +619,33 @@ section > div {
   clip-path: circle(calc(350px) at 50% calc(50% + 70px));
   margin: 0 auto;
 }
-
 .gradient-esferaGrande{
   position: absolute;
   width: 800px;
   height: 800px;
   top: -50px;
   right: -200px;
-  background:
-    linear-gradient(
-      225deg,
-      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
-      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
-      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+  background: linear-gradient(
+    225deg,
+    color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+    color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+    color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
   background-repeat: no-repeat;
   background-size: cover;
   clip-path: circle(400px at 50% 50%);
   margin: 0 auto;
 }
-
 .gradient-esferaPequena{
   position: absolute;
   top: 32%;
   left: -12%;
   width: 300px;
   height: 300px;
-  background:
-    linear-gradient(
-      225deg,
-      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
-      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
-      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+  background: linear-gradient(
+    225deg,
+    color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+    color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+    color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
   background-repeat: no-repeat;
   background-size: cover;
   clip-path: circle(120px at 50% 50%);
@@ -1058,7 +1012,6 @@ section > div {
   }
 }
 
-
 @media screen and (width <= 1440) and (width > 1366) {
   .tituloComponente {
     line-height: 1.7cap !important;
@@ -1416,7 +1369,6 @@ section > div {
     border-radius: 20px !important;
   }
 }
-
 
 @media screen and (width <= 1366) and (width > 1280) {
   .tituloComponente {
@@ -1780,7 +1732,6 @@ section > div {
   }
 }
 
-
 @media screen and (width <= 1280) and (width > 800) {
   .tituloComponente {
     line-height: 1.7cap !important;
@@ -1987,7 +1938,6 @@ section > div {
     max-width: 160px !important;
   }
 
-
   .painelMetas {
     margin: 0 auto !important;
     height: 85vh !important;
@@ -2151,6 +2101,9 @@ section > div {
   }
 }
 
+@media screen and (width <= 800) and (width > 500) {
+
+}
 
 
 
@@ -2164,15 +2117,792 @@ section > div {
 
 
 
+@media screen and (width <= 500) {
+  .tituloPrincipal {
+    font-size: 2cap !important;
+  }
+  .tituloComponente {
+    line-height: 1.7cap !important;
+    font-size: 1.4cap !important;
+  }
+  .subtituloComponente {
+    line-height: 1.7cap !important;
+    font-size: 1.1cap !important;
+  }
+  .painelObjetivosImageCardsContainer {
+    gap: 1.5rem !important;
+    padding: 1rem 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+  }
+  .imageCard {
+    border-radius: 10px !important;
+    min-width: 250px !important;
+    max-width: 250px !important;
+    height: 100% !important;
+    margin: 0 auto !important;
+  }
+  .imagemImageCard {
+    width: 250px !important;
+    height: 250px !important;
+  }
+  .textoImageCard {
+    font-size: 1.1rem !important;
+  }
+  .painelFeedbackGridDepoimentos{
+    gap: 20px; /* Espaçamento entre cards */
+    padding: 0;
+  }
+  .cardDepoimentoContainer {
+    grid-template-columns: 1fr !important; /* Alinhar imagem e conteúdo lado a lado */
+    gap: 20px !important;
+    border-radius: 12px !important;
+    padding: 0 !important;
+  }
+  .cardDepoimentoImagem {
+    justify-self: center !important;
+    max-width: 80% !important;
+  }
+  .cardDepoimentoTextoContainer {
+    border-radius: 10px !important;
+    padding: 10px !important;
+  }
+  .cardDepoimentoTitulo {
+    font-size: 1.2rem !important;
+    font-weight: bold !important;
+    margin-bottom: 10px !important;
+  }
+  .cardDepoimentoTexto {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  .fotoTurmaContainer {
+    width: calc(100% - 2rem) !important;
+    height: 450px !important;
+  }
+  .fotoTurmaImagem {
+    top: -350px !important;
+  }
+  .painelSobreContainerImagem{
+    width: 50% !important;
+    height: 100% !important;
+    top: 0 !important;
+    right: 0 !important;
+  }
+  .painelSobreImagem {
+    width: 170px !important;
+    height: auto !important;
+    top: 5% !important;
+    left: 4% !important;
+    border-radius: 10px !important;
+  }
+  .painelSobreImagemFrame {
+    width: 170px !important;
+    height: 170px !important;
+    top: 8% !important;
+    left: 16% !important;
+    border-radius: 10px !important;
+  }
+  /* ------------------------------ FILOSOFIA ------------------------------- */
+  .painelFilosofia,
+  .painelHistoria {
+    min-height: 960px;
+  }
+  .painelFilosofia .tituloPrincipal,
+  .painelHistoria .tituloPrincipal {
+    width: 100%;
+    font-size: 2cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelFilosofia div,
+  .painelHistoria div {
+    font-size: 1.55cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelFilosofia .painelFilosofiaTexto,
+  .painelHistoria .painelHistoriaTexto {
+    top: 340px !important;
+    width: 100% !important;
+    right: 0 !important;
+    font-size: 1.2cap !important;
+    line-height: 1.6cap !important;
+  }
+  .painelFilosofia .painelFilosofiaContainerImagem,
+  .painelHistoria .painelHistoriaContainerImagem {
+    width: 80% !important;
+    height: 100% !important;
+    top: -180px !important;
+  }
+  .painelFilosofia .painelFilosofiaImagemFrame,
+  .painelHistoria .painelHistoriaImagemFrame {
+    width: 320px !important;
+    height: 230px !important;
+    top: 29% !important;
+    left: 8% !important;
+    border-radius: 10px !important;  
+  }
+  .painelFilosofia .painelFilosofiaImagem,
+  .painelHistoria .painelHistoriaImagem {
+    width: 550px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 0 !important;
+    border-radius: 10px !important;
+  }
+  .painelHistoria {
+    min-height: 920px;
+  }
+  .painelHistoria .painelHistoriaContainerImagem {
+    width: 80% !important;
+    height: 100% !important;
+    top: -170px !important;
+  }
+  .painelHistoria .painelHistoriaTexto {
+    top: 320px !important;
+    width: 100% !important;
+    right: -10px !important;
+    font-size: 1.2cap !important;
+    line-height: 1.6cap !important;
+  }
+  .painelHistoria .painelHistoriaImagemFrame {
+    width: 300px !important;
+    height: 220px !important;
+    top: 24% !important;
+    left: 14% !important;
+    border-radius: 10px !important;  
+  }
+  .painelHistoria .painelHistoriaImagem {
+    width: 550px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 10% !important;
+    border-radius: 10px !important;
+  }
+  /* ------------------------------ NECESSIDADES ------------------------------- */
+  .painelNecessidadesTitulo {
+    top: 20px !important;
+    left: 0 !important;
+    width: 100% !important;
+    font-size: 1.5cap !important;
+  }
+  .painelNecessidadesCardsContainer {
+    gap: 1rem !important;
+    width: 100% !important;
+    padding: 1rem 0 !important;
+    padding-top: 100px !important;
+  }
+  .painelNecessidadesCardsContainer > div {
+    min-width: 150px !important;
+    max-width: 340px !important;
+  }
+  /* ------------------------------ METAS ------------------------------- */
+  .painelMetas {
+    margin: 0 auto !important;
+    height: 85vh !important;
+    margin-bottom: 10vh !important;
+  }
+  .painelMetas div {
+    font-size: 1.4cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelMetas .tituloComponente {
+    font-size: 2.5cap !important;
+    line-height: 1.8cap !important;
+  }
+  .painelMetas .painelMetasTexto{
+    font-size: 1.55cap !important;
+    line-height: 1.6cap !important;
+    top: 600px !important;
+    left: 10px !important;
+    min-width: 100% !important;
+  }
+  .painelMetas .painelMetasContainerBotao {
+    top: 760px !important;
+    left: 35px !important;
+  }
+  .painelMetas .painelMetasContainerImagem {
+    width: 85% !important;
+    height: 100% !important;
+    top: -100px !important;
+  }
+  .painelMetas .painelMetasImagemFrame {
+    width: 325px !important;
+    height: 405px !important;
+    top: 30% !important;
+    left: 5% !important;
+    border-radius: 10px !important;
+  }
+  .painelMetas .painelMetasImagem {
+    width: 400px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 0 !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosIntro {
+    height: 400px !important;
+  }
+  .painelLivrosIntro .tituloPrincipal {
+    min-width: 100% !important;
+    top: 80px !important;
+  }
+  .painelLivrosIntroContainerImagem {
+    width: 80% !important;
+    height: 100% !important;
+    top: 75px !important;
+    right: 60px !important;
+  }
+  .painelLivrosIntroImagemFrame {
+    width: 330px !important;
+    height: 190px !important;
+    top: 30% !important;
+    left: 10% !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosIntroImagem {
+    width: 600px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 5% !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco1 {
+    margin-top: 50px !important;
+    width: 100% !important;
+    height: 820px !important;
+    margin-bottom: 5vh !important;
+  }
+  .painelLivrosBloco1 div {
+    font-size: 1.55cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1Texto {
+    top: 350px !important;
+    right: 0% !important;
+    width: 95% !important;
+    font-size: 1.2cap !important;
+    line-height: 2cap !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1ContainerImagem {
+    width: 50% !important;
+    height: 100% !important;
+    left: 20% !important;
+    top: 0 !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1ImagemFrame {
+    width: 210px !important;
+    height: 270px !important;
+    top: 65px !important;
+    left: 35px !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1Imagem {
+    width: 300px !important;
+    height: auto !important;
+    top: 5% !important;
+    left: 10% !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco2 {
+    width: 100% !important;
+    height: 1120px !important;
+    margin-bottom: 0 !important;
+  }
+  .painelLivrosBloco2 div {
+    font-size: 1.55cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2Texto {
+    top: 400px !important;
+    right: 0% !important;
+    width: 95% !important;
+    font-size: 1.2cap !important;
+    line-height: 2cap !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2ContainerImagem {
+    width: 300px !important;
+    height: 300px !important;
+    left: 30px !important;
+    top: -10px !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2ImagemFrame {
+    width: 300px !important;
+    height: 300px !important;
+    top: 70px !important;
+    left: 20px !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2Imagem {
+    width: 500px !important;
+    height: auto !important;
+    top: 15% !important;
+    left: 0 !important;
+    border-radius: 10px !important;
+  }
 
+  .painelGaleria {
+    width: calc(100% - 2rem) !important;
+    min-height: 300px !important;
+    height: 300px !important;
+  }
+  .painelGaleria .gradient-esferaPequena {
+    top: -20px !important;
+  }
+  .painelGaleriaTitulo {
+    width: 100% !important;
+    top: 10% !important;
+    font-size: 4cap !important;
+  }
 
-
-
-@media (max-width: 768px) {
-  .painelFeedbackGridDepoimentos {
-    grid-template-columns: 1fr !important; /* 1 coluna em dispositivos menores */
+  .gradient-left {
+    width: 100%;
+    min-height: 100%;
+    border-top-right-radius: 70px;
+    background: linear-gradient(
+      270deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 100%, transparent) 20%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 2cap;
+    padding: 1cap;
+  }
+  .gradient-right {
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    border-top-left-radius: 70px;
+    font-size: 2cap;
+    padding: 2cap;
+    z-index: 1;
+  }
+  .gradient-right::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 70px;
+    background: linear-gradient(
+      90deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 100%, transparent) 20%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%
+    );
+    z-index: -1;
+  }
+  .gradient-topdown {
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(calc(200px) at 50% calc(50% + 20px));
+    margin: 0 auto;
+  }
+  .gradient-esferaGrande{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: -25px;
+    right: -200px;
+    background: linear-gradient(
+      225deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(200px at 50% 50%);
+    margin: 0 auto;
+  }
+  .gradient-esferaPequena{
+    position: absolute;
+    top: 16%;
+    left: -22%;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(
+      225deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(60px at 50% 50%);
+    margin: 0 auto;
   }
 }
+
+
+
+
+
+
+
+
+@media screen and (width <= 400) {
+  .tituloComponente {
+    line-height: 1.7cap !important;
+    font-size: 1.3cap !important;
+  }
+  .subtituloComponente {
+    line-height: 2cap !important;
+    font-size: .8cap !important;
+  }
+  .fotoTurmaContainer {
+    width: calc(100% - 2rem) !important;
+    height: 400px !important;
+  }
+  .fotoTurmaImagem {
+    top: -250px !important;
+  }
+  .gradient-topdown {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(
+      180deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(calc(150px) at 50% calc(50% + 15px));
+    margin: 0 auto;
+  }
+  .gradient-esferaGrande{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    top: -50px;
+    right: -250px;
+    background: linear-gradient(
+      225deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(200px at 50% 50%);
+    margin: 0 auto;
+  }
+  .gradient-esferaPequena{
+    position: absolute;
+    top: 16%;
+    left: -30%;
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(
+      225deg,
+      color-mix(in srgb, var(--gradient-circle-bg) 90%, transparent) 25%, 
+      color-mix(in srgb, var(--gradient-circle-bg) 30%, transparent) 50%,
+      color-mix(in srgb, var(--gradient-circle-bg) 0%, transparent) 80%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    clip-path: circle(60px at 50% 50%);
+    margin: 0 auto;
+  }
+  .painelSobreContainerImagem{
+    width: 50% !important;
+    height: 100% !important;
+    top: 0 !important;
+    right: 0 !important;
+  }
+  .painelSobreImagem {
+    width: 150px !important;
+    height: auto !important;
+    top: 5% !important;
+    left: 4% !important;
+    border-radius: 10px !important;
+  }
+  .painelSobreImagemFrame {
+    width: 150px !important;
+    height: 150px !important;
+    top: 8% !important;
+    left: 15% !important;
+    border-radius: 10px !important;
+  }
+  .painelFilosofia,
+  .painelHistoria {
+    min-height: 1050px;
+  }
+  .painelFilosofia .tituloPrincipal,
+  .painelHistoria .tituloPrincipal {
+    width: 100%;
+    font-size: 2cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelFilosofia div,
+  .painelHistoria div {
+    font-size: 1.55cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelFilosofia .painelFilosofiaTexto,
+  .painelHistoria .painelHistoriaTexto {
+    top: 300px !important;
+    width: 100% !important;
+    right: 0 !important;
+    font-size: 1.2cap !important;
+    line-height: 1.6cap !important;
+  }
+  .painelFilosofia .painelFilosofiaContainerImagem,
+  .painelHistoria .painelHistoriaContainerImagem {
+    width: 80% !important;
+    height: 100% !important;
+    top: -190px !important;
+  }
+  .painelFilosofia .painelFilosofiaImagemFrame,
+  .painelHistoria .painelHistoriaImagemFrame {
+    width: 255px !important;
+    height: 190px !important;
+    top: 27% !important;
+    left: 8% !important;
+    border-radius: 10px !important;  
+  }
+  .painelFilosofia .painelFilosofiaImagem,
+  .painelHistoria .painelHistoriaImagem {
+    width: 550px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 0 !important;
+    border-radius: 10px !important;
+  }
+  .painelHistoria {
+    min-height: 1060px;
+  }
+  .painelHistoria .painelHistoriaContainerImagem {
+    width: 80% !important;
+    height: 100% !important;
+    top: -200px !important;
+  }
+  .painelHistoria .painelHistoriaTexto {
+    top: 280px !important;
+    width: 100% !important;
+    right: -5px !important;
+    font-size: 1.2cap !important;
+    line-height: 1.6cap !important;
+  }
+  .painelHistoria .painelHistoriaImagemFrame {
+    width: 230px !important;
+    height: 170px !important;
+    top: 24% !important;
+    left: 14% !important;
+    border-radius: 10px !important;  
+  }
+  .painelHistoria .painelHistoriaImagem {
+    width: 550px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 10% !important;
+    border-radius: 10px !important;
+  }
+  .painelNecessidadesTitulo {
+    top: 20px !important;
+    left: 0 !important;
+    width: 100% !important;
+    font-size: 1.25cap !important;
+  }
+  .painelMetas {
+    margin: 0 auto !important;
+    height: 750px !important;
+    margin-bottom: 10vh !important;
+  }
+  .painelMetas div {
+    font-size: 1.4cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelMetas .tituloComponente {
+    font-size: 2cap !important;
+    line-height: 1.8cap !important;
+  }
+  .painelMetas .painelMetasTexto{
+    font-size: 1.55cap !important;
+    line-height: 1.6cap !important;
+    top: 480px !important;
+    left: 10px !important;
+    min-width: 100% !important;
+  }
+  .painelMetas .painelMetasContainerBotao {
+    top: 680px !important;
+    left: 0px !important;
+  }
+  .painelMetas .painelMetasContainerImagem {
+    width: 85% !important;
+    height: 100% !important;
+    top: -90px !important;
+  }
+  .painelMetas .painelMetasImagemFrame {
+    width: 255px !important;
+    height: 315px !important;
+    top: 30% !important;
+    left: 5% !important;
+    border-radius: 10px !important;
+  }
+  .painelMetas .painelMetasImagem {
+    width: 400px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 0 !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosIntro {
+    height: 400px !important;
+  }
+  .painelLivrosIntro .tituloPrincipal {
+    min-width: 100% !important;
+    top: 80px !important;
+  }
+  .painelLivrosIntroContainerImagem {
+    width: 80% !important;
+    height: 100% !important;
+    top: 75px !important;
+    right: 60px !important;
+  }
+  .painelLivrosIntroImagemFrame {
+    width: 265px !important;
+    height: 155px !important;
+    top: 30% !important;
+    left: 10% !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosIntroImagem {
+    width: 600px !important;
+    height: auto !important;
+    top: 25% !important;
+    left: 5% !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco1 {
+    margin-top: 50px !important;
+    width: 100% !important;
+    height: 920px !important;
+    margin-bottom: 5vh !important;
+  }
+  .painelLivrosBloco1 div {
+    font-size: 1.55cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1Texto {
+    top: 350px !important;
+    right: 0% !important;
+    width: 95% !important;
+    font-size: 1.2cap !important;
+    line-height: 2cap !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1ContainerImagem {
+    width: 60% !important;
+    height: 100% !important;
+    left: 10% !important;
+    top: 0 !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1ImagemFrame {
+    width: 195px !important;
+    height: 250px !important;
+    top: 65px !important;
+    left: 35px !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco1 .painelLivrosBloco1Imagem {
+    width: 300px !important;
+    height: auto !important;
+    top: 5% !important;
+    left: 10% !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco2 {
+    width: 100% !important;
+    height: 1220px !important;
+    margin-bottom: 0 !important;
+  }
+  .painelLivrosBloco2 div {
+    font-size: 1.55cap !important;
+    line-height: 1.4cap !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2Texto {
+    top: 320px !important;
+    right: 0% !important;
+    width: 95% !important;
+    font-size: 1.2cap !important;
+    line-height: 2cap !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2ContainerImagem {
+    width: 250px !important;
+    height: 250px !important;
+    left: 30px !important;
+    top: -10px !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2ImagemFrame {
+    width: 250px !important;
+    height: 250px !important;
+    top: 60px !important;
+    left: 20px !important;
+    border-radius: 10px !important;
+  }
+  .painelLivrosBloco2 .painelLivrosBloco2Imagem {
+    width: 500px !important;
+    height: auto !important;
+    top: 15% !important;
+    left: 0 !important;
+    border-radius: 10px !important;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2233,6 +2963,7 @@ section > div {
     height: auto;
   }
 }
+
 
 
 

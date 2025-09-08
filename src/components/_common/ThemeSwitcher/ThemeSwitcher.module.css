@@ -1,24 +1,27 @@
+.themeSwitcherRow {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+}
+
 .themeSwitcherContainer {
-  max-width: 28px;
-  min-width: 28px;
-  margin: auto 0;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
 .themeSwitcher {
   display: flex;
-  flex-direction: column;
-  gap: 8px;
-  position: relative;
-  align-items: flex-end; /* Mantém alinhamento à direita */
+  align-items: center;
+  justify-content: center;
 }
 
-/* Tooltip container */
 .tooltip {
   position: relative;
   display: inline-block;
 }
 
-/* Tooltip text */
 .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;

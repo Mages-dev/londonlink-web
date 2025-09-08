@@ -1,9 +1,9 @@
 "use client";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect } from "react";
 import { useTheme } from "@/context";
+import styles from "./Navigation.module.css"
 
 const Logo = () => {
-  const [showButton, setShowButton] = useState(false);
   const objectRef = useRef<HTMLObjectElement>(null);
   const { theme } = useTheme();
 
@@ -43,32 +43,23 @@ const Logo = () => {
     return () => clearInterval(interval);
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setShowButton(window.scrollY >= 400 && window.innerWidth < 768);
-    };
-    
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-      <object
-        ref={objectRef}
-        type="image/svg+xml"
-        data="/img/logo.svg"
-        aria-label="LondonLink"
-        onLoad={() => {
-          updateSvgColors();
-          setTimeout(updateSvgColors, 300);
-        }}
-        style={{ 
-          width: 'auto', 
-          height: '90px',
-          opacity: showButton ? 0 : 1,
-          transition: 'opacity 0.3s'
-        }}
-      />
+    <object
+      className={styles.logo}
+      ref={objectRef}
+      type="image/svg+xml"
+      data="/img/logo.svg"
+      aria-label="LondonLink"
+      onLoad={() => {
+        updateSvgColors();
+        setTimeout(updateSvgColors, 300);
+      }}
+      style={{ 
+        width: 'auto', 
+        height: '90px',
+        transition: 'opacity 0.3s'
+      }}
+    />
   );
 };
 

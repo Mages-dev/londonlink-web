@@ -54,6 +54,7 @@
     width: 35%;
     top: 0;
     right: 0;
+    z-index: 2010;
   }
 }
 
@@ -71,7 +72,6 @@
   }
 
   .buttonContainer {
-    border: 1px solid red;
     width: 150px;
     margin-left: 100px;
     margin-top: 15px;

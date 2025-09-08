@@ -1,8 +1,8 @@
 .depoimentoCard {
   display: grid;
-  grid-template-columns: auto 1fr; /* Alinhar imagem e conteúdo lado a lado */
+  grid-template-columns: auto 1fr;
   align-items: center;
-  gap: 20px; /* Espaço entre imagem e texto */
+  gap: 20px;
   border-radius: 12px;
   padding: 20px;
   transition: transform 0.3s ease;
@@ -13,7 +13,7 @@
 }
 
 .depoimentoImage {
-  flex-shrink: 0; /* Garante que a imagem mantenha seu tamanho */
+  flex-shrink: 0;
 }
 
 .content {
@@ -35,4 +35,41 @@
   font-size: 0.95rem;
   color: var(--text);
   line-height: 1.5;
+}
+
+/* Para telas entre 400px e 500px */
+@media screen and (width <= 500px) and (width > 400px) {
+  .depoimentoCard {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .depoimentoImage {
+    justify-self: center;
+    max-width: 80%;
+  }
+}
+
+/* Para telas até 400px */
+@media screen and (width <= 400px) {
+  .depoimentoCard {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .depoimentoImage {
+    justify-self: center;
+    max-width: 70%;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+  }
+  
+  .texto {
+    font-size: 0.9rem;
+  }
 }

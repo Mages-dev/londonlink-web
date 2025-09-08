@@ -42,3 +42,15 @@
   left: 0;
   border-radius: 20px;
 }
+
+@media screen and (width <= 500) {
+  .component {
+    height: 50vh;
+    max-width: 500px;
+  }
+  .titulo {
+    position: absolute;
+    width: 45%;
+    top: 15%;
+  }
+}

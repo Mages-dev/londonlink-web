@@ -1,5 +1,5 @@
 "use client";
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { MenuProps } from "@/interfaces"
 import { useSections, useLanguage } from "@/context";
 import { ThemeSwitcher } from "@/Common/ThemeSwitcher";
@@ -8,18 +8,45 @@ import LanguageSwitcher from "@/Common/LanguageSwitcher";
 import Button from "@/Common/Button";
 import Logo from "./Logo";
 import Navbar from "./Navbar"
-import Sidebar from "./Sidebar"
 import styles from "./Navigation.module.css"
 
 const Navigation: React.FC<MenuProps> = ({
   activeSection: initialActiveSection = 'home'
 }) => {
   const { t } = useLanguage();
+  const objectRef = useRef<HTMLObjectElement>(null);
   const [activeSection, setActiveSection] = useState(initialActiveSection);
   const { sections, titles } = useSections();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { setPreloadUntil } = useForceSection();
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  // Função de toggle para alternar o estado
+  const toggleDrawer = () => {
+    setDrawerOpen(prevState => !prevState);
+    console.log(drawerOpen);
+  };
+
+  const updateSvgColors = () => {
+    try {
+      const svgDoc = objectRef.current?.contentDocument;
+      const targetGroup = svgDoc?.getElementById('Icon');
+      
+      if (targetGroup) {
+        const style = getComputedStyle(document.documentElement);
+        const iconColor = style.getPropertyValue('--options-icon-color').trim();
+        targetGroup.setAttribute('fill', iconColor);
+      }
+    } catch (error) {
+      console.error('Error updating SVG:', error);
+    }
+  };
+
+  useEffect(() => {
+    updateSvgColors();
+  });
+
 
   const scrollToSection = (sectionId: string) => {
     setPreloadUntil(sectionId); // força o carregamento até a section clicada
@@ -87,19 +114,10 @@ const Navigation: React.FC<MenuProps> = ({
   }, [activeSection, sections]);
 
   return (
-    <div className={`${styles.menucontainer} ${scrolled ? styles.scrolled : ""}`}>
+    <div className={`${styles.menucontainer} ${drawerOpen ? styles.expanded : ""} ${scrolled ? styles.scrolled : ""}`}>
       <Logo />
       <div className={styles.navWrapper}>
-        <nav className={`${styles.menubar} ${scrolled ? styles.scrolled : ""}`}>
-          <Sidebar
-            sections={sections}
-            titles={titles}
-            isOpen={isOpen}
-            toggle={() => setIsOpen(!isOpen)}
-            activeSection={activeSection}
-            isActive={isActive}
-            scrollToSection={scrollToSection}
-          />
+        <nav className={`${styles.menubar} ${isOpen ? styles.expanded : ""} ${scrolled ? styles.scrolled : ""}`}>
           <Navbar
             sections={sections}
             titles={titles}
@@ -108,12 +126,30 @@ const Navigation: React.FC<MenuProps> = ({
             isActive={isActive}
             scrollToSection={scrollToSection}
           />
-          <div className="hidden md:block">
+          <div className={`${styles.preregbutton} hidden md:block`}>
             <Button
               caption={String(t("menu.preregistration"))}
               transparentBackground={true} />
           </div>
+          <div className={styles.menuSwitchers}>
+            <ThemeSwitcher />
+            <LanguageSwitcher />
+          </div>
         </nav>
+      </div>
+      <div 
+        className={styles.drawerIcon}
+        onClick={toggleDrawer}
+      >
+        <object
+          ref={objectRef}
+          type="image/svg+xml"
+          data={`/img/icons/options.svg`}
+          aria-label={""}
+          onLoad={updateSvgColors}
+        />
+      </div>
+      <div className={styles.drawerContent}>
         <ThemeSwitcher />
         <LanguageSwitcher />
       </div>
