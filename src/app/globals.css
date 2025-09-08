@@ -653,7 +653,7 @@ section > div {
 }
 
 /* Responsividade */
-@media screen and (max-width: 1540) {
+@media only screen and (max-width: 1540) {
   .tituloComponente {
     line-height: 1.7cap !important;
     font-size: 2cap !important;
@@ -1012,7 +1012,7 @@ section > div {
   }
 }
 
-@media screen and (max-width: 1440) {
+@media only screen and (max-width: 1440) {
   .tituloComponente {
     line-height: 1.7cap !important;
     font-size: 2cap !important;
@@ -1370,7 +1370,7 @@ section > div {
   }
 }
 
-@media screen and (max-width: 1366) {
+@media only screen and (max-width: 1366) {
   .tituloComponente {
     line-height: 1.7cap !important;
     font-size: 2cap !important;
@@ -1732,7 +1732,7 @@ section > div {
   }
 }
 
-@media screen and (max-width: 1280) {
+@media only screen and ((max-width: 1280) or (-webkit-min-device-pixel-ratio: 3)) {
   .tituloComponente {
     line-height: 1.7cap !important;
     font-size: 2cap !important;
@@ -2101,7 +2101,7 @@ section > div {
   }
 }
 
-@media screen and (max-width: 768) {
+@media only screen and ((max-width: 768) or (-webkit-min-device-pixel-ratio: 3)) {
   .tituloPrincipal {
     font-size: 2cap !important;
   }
@@ -2526,7 +2526,7 @@ section > div {
   }
 }
 
-@media screen and (max-width: 400) {
+@media only screen and ((max-width: 400) or (-webkit-min-device-pixel-ratio: 3)) {
   .tituloComponente {
     line-height: 1.7cap !important;
     font-size: 1.3cap !important;
