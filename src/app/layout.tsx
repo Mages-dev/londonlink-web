@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   title: 'LondonLink',
   description: 'Aprenda inglês no seu ritmo e alcance o que você quiser!',
   authors: [{ name: 'Mages.dev', url: 'mailto:contato@mages.dev' }],
+  viewport: "width=device-width, initial-scale=1", // <- importante
   robots: 'index, follow',
   openGraph: {
     title: 'LondonLink',
